@@ -13,7 +13,6 @@
 		B3FCCFAD1EFC3E54004C46A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3FCCFAB1EFC3E54004C46A2 /* Main.storyboard */; };
 		B3FCCFAF1EFC3E54004C46A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FCCFAE1EFC3E54004C46A2 /* Assets.xcassets */; };
 		B3FCCFB21EFC3E54004C46A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3FCCFB01EFC3E54004C46A2 /* LaunchScreen.storyboard */; };
-		B3FCCFC01EFC3E85004C46A2 /* SwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FCCFBF1EFC3E85004C46A2 /* SwiftDemoTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +37,6 @@
 		B3FCCFB11EFC3E54004C46A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3FCCFB31EFC3E54004C46A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3FCCFBD1EFC3E85004C46A2 /* SwiftDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3FCCFBF1EFC3E85004C46A2 /* SwiftDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDemoTests.swift; sourceTree = "<group>"; };
 		B3FCCFC11EFC3E85004C46A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,7 +103,6 @@
 		B3FCCFBE1EFC3E85004C46A2 /* SwiftDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				B3FCCFBF1EFC3E85004C46A2 /* SwiftDemoTests.swift */,
 				B3FCCFC11EFC3E85004C46A2 /* Info.plist */,
 			);
 			path = SwiftDemoTests;
@@ -133,6 +130,7 @@
 				B3FCCFA21EFC3E54004C46A2 /* Resources */,
 				3B16FE3D917099ECB423D106 /* [CP] Embed Pods Frameworks */,
 				3C1D4B956C3B053788F7C908 /* [CP] Copy Pods Resources */,
+				B393DE1A1EFC6575000FDC53 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -150,6 +148,7 @@
 				B3FCCFB91EFC3E85004C46A2 /* Sources */,
 				B3FCCFBA1EFC3E85004C46A2 /* Frameworks */,
 				B3FCCFBB1EFC3E85004C46A2 /* Resources */,
+				B393DE1B1EFC658B000FDC53 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -252,6 +251,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftDemoApp/Pods-SwiftDemoApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B393DE1A1EFC6575000FDC53 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		B393DE1B1EFC658B000FDC53 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		FE6CF8EFA30DC25423034B32 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -283,7 +310,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3FCCFC01EFC3E85004C46A2 /* SwiftDemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
