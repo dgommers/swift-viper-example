@@ -1,4 +1,7 @@
 language: objective-c
 osx_image: xcode8.3
-xcode_workspace: SwiftDemo.xcworkspace
-xcode_scheme: SwiftDemo
+script:
+  - set -o pipefail
+  - xcodebuild -version
+  - xcodebuild -showsdks
+  - xcodebuild -workspace SwiftDemo.xcworkspace -scheme SwiftDemo -destination "OS=10.3,name=iPhone 7" test | xcpretty
