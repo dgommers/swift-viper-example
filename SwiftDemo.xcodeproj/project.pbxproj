@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6935E89081F2185D3C2FB0B1 /* Pods_SwiftDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EE7BBDD03037DD028294E9 /* Pods_SwiftDemoTests.framework */; };
 		A0863958FDF1D4C649AE86F8 /* Pods_SwiftDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E0CD0D263C4EBF3AC26C126 /* Pods_SwiftDemoApp.framework */; };
+		B393DE1F1EFC703C000FDC53 /* ExampleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B393DE1E1EFC703C000FDC53 /* ExampleSpec.swift */; };
 		B3FCCFA81EFC3E54004C46A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FCCFA71EFC3E54004C46A2 /* AppDelegate.swift */; };
 		B3FCCFAA1EFC3E54004C46A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FCCFA91EFC3E54004C46A2 /* ViewController.swift */; };
 		B3FCCFAD1EFC3E54004C46A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3FCCFAB1EFC3E54004C46A2 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		4147F128E7A8FF8C493E0F0D /* Pods-SwiftDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemoTests/Pods-SwiftDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		903CD887AA47853168E82B1F /* Pods-SwiftDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemoApp/Pods-SwiftDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		905B578B99B39E4A4DA688FA /* Pods-SwiftDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemoApp/Pods-SwiftDemoApp.release.xcconfig"; sourceTree = "<group>"; };
+		B393DE1E1EFC703C000FDC53 /* ExampleSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleSpec.swift; sourceTree = "<group>"; };
 		B3FCCFA41EFC3E54004C46A2 /* SwiftDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FCCFA71EFC3E54004C46A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3FCCFA91EFC3E54004C46A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				B3FCCFC11EFC3E85004C46A2 /* Info.plist */,
+				B393DE1E1EFC703C000FDC53 /* ExampleSpec.swift */,
 			);
 			path = SwiftDemoTests;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B393DE1F1EFC703C000FDC53 /* ExampleSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
