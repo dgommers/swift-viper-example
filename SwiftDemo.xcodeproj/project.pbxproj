@@ -93,9 +93,9 @@
 			isa = PBXGroup;
 			children = (
 				B3BEB0A31EFDA014004F07AD /* ArticleListPresenter.swift */,
+				B3BEB0A51EFDA9AA004F07AD /* ArticleListRouter.swift */,
 				B3BEB0961EFD9137004F07AD /* ArticleListViewController.swift */,
 				B3BEB09A1EFD93C6004F07AD /* ArticleListViewModel.swift */,
-				B3BEB0A51EFDA9AA004F07AD /* ArticleListRouter.swift */,
 			);
 			path = ArticleList;
 			sourceTree = "<group>";
@@ -104,8 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				B393DE1E1EFC703C000FDC53 /* ArticleListPresenterSpec.swift */,
-				B3BEB09D1EFD948C004F07AD /* ArticleListViewControllerSpec.swift */,
 				B3BEB0A71EFDA9B9004F07AD /* ArticleListRouterSpec.swift */,
+				B3BEB09D1EFD948C004F07AD /* ArticleListViewControllerSpec.swift */,
 			);
 			path = ArticleList;
 			sourceTree = "<group>";
