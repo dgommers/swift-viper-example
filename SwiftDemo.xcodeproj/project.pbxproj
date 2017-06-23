@@ -10,8 +10,8 @@
 		6935E89081F2185D3C2FB0B1 /* Pods_SwiftDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EE7BBDD03037DD028294E9 /* Pods_SwiftDemoTests.framework */; };
 		A0863958FDF1D4C649AE86F8 /* Pods_SwiftDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E0CD0D263C4EBF3AC26C126 /* Pods_SwiftDemoApp.framework */; };
 		B393DE1F1EFC703C000FDC53 /* ExampleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B393DE1E1EFC703C000FDC53 /* ExampleSpec.swift */; };
+		B3BEB0971EFD9137004F07AD /* ArticleListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEB0961EFD9137004F07AD /* ArticleListTableViewController.swift */; };
 		B3FCCFA81EFC3E54004C46A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FCCFA71EFC3E54004C46A2 /* AppDelegate.swift */; };
-		B3FCCFAA1EFC3E54004C46A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FCCFA91EFC3E54004C46A2 /* ViewController.swift */; };
 		B3FCCFAD1EFC3E54004C46A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3FCCFAB1EFC3E54004C46A2 /* Main.storyboard */; };
 		B3FCCFAF1EFC3E54004C46A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FCCFAE1EFC3E54004C46A2 /* Assets.xcassets */; };
 		B3FCCFB21EFC3E54004C46A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3FCCFB01EFC3E54004C46A2 /* LaunchScreen.storyboard */; };
@@ -34,9 +34,9 @@
 		903CD887AA47853168E82B1F /* Pods-SwiftDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemoApp/Pods-SwiftDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		905B578B99B39E4A4DA688FA /* Pods-SwiftDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemoApp/Pods-SwiftDemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		B393DE1E1EFC703C000FDC53 /* ExampleSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleSpec.swift; sourceTree = "<group>"; };
+		B3BEB0961EFD9137004F07AD /* ArticleListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListTableViewController.swift; sourceTree = "<group>"; };
 		B3FCCFA41EFC3E54004C46A2 /* SwiftDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FCCFA71EFC3E54004C46A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B3FCCFA91EFC3E54004C46A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B3FCCFAC1EFC3E54004C46A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B3FCCFAE1EFC3E54004C46A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3FCCFB11EFC3E54004C46A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -75,14 +75,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B3BEB0951EFD9120004F07AD /* ArticleList */ = {
+			isa = PBXGroup;
+			children = (
+				B3BEB0961EFD9137004F07AD /* ArticleListTableViewController.swift */,
+			);
+			name = ArticleList;
+			path = ArticleList;
+			sourceTree = "<group>";
+		};
 		B3FCCF9B1EFC3E54004C46A2 = {
 			isa = PBXGroup;
 			children = (
+				423203E38FCCCC937F41C26B /* Frameworks */,
+				D780A0BDC4D59CDDDDBC1E73 /* Pods */,
+				B3FCCFA51EFC3E54004C46A2 /* Products */,
 				B3FCCFA61EFC3E54004C46A2 /* SwiftDemoApp */,
 				B3FCCFBE1EFC3E85004C46A2 /* SwiftDemoTests */,
-				B3FCCFA51EFC3E54004C46A2 /* Products */,
-				D780A0BDC4D59CDDDDBC1E73 /* Pods */,
-				423203E38FCCCC937F41C26B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,12 +107,12 @@
 		B3FCCFA61EFC3E54004C46A2 /* SwiftDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				B3BEB0951EFD9120004F07AD /* ArticleList */,
 				B3FCCFA71EFC3E54004C46A2 /* AppDelegate.swift */,
-				B3FCCFA91EFC3E54004C46A2 /* ViewController.swift */,
-				B3FCCFAB1EFC3E54004C46A2 /* Main.storyboard */,
 				B3FCCFAE1EFC3E54004C46A2 /* Assets.xcassets */,
-				B3FCCFB01EFC3E54004C46A2 /* LaunchScreen.storyboard */,
 				B3FCCFB31EFC3E54004C46A2 /* Info.plist */,
+				B3FCCFB01EFC3E54004C46A2 /* LaunchScreen.storyboard */,
+				B3FCCFAB1EFC3E54004C46A2 /* Main.storyboard */,
 			);
 			path = SwiftDemoApp;
 			sourceTree = "<group>";
@@ -111,8 +120,8 @@
 		B3FCCFBE1EFC3E85004C46A2 /* SwiftDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				B3FCCFC11EFC3E85004C46A2 /* Info.plist */,
 				B393DE1E1EFC703C000FDC53 /* ExampleSpec.swift */,
+				B3FCCFC11EFC3E85004C46A2 /* Info.plist */,
 			);
 			path = SwiftDemoTests;
 			sourceTree = "<group>";
@@ -361,7 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3FCCFAA1EFC3E54004C46A2 /* ViewController.swift in Sources */,
+				B3BEB0971EFD9137004F07AD /* ArticleListTableViewController.swift in Sources */,
 				B3FCCFA81EFC3E54004C46A2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +400,7 @@
 				B3FCCFAC1EFC3E54004C46A2 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		B3FCCFB01EFC3E54004C46A2 /* LaunchScreen.storyboard */ = {
@@ -399,6 +409,7 @@
 				B3FCCFB11EFC3E54004C46A2 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
