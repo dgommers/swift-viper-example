@@ -9,6 +9,6 @@ protocol ArticleListInteractor {
 struct ArticleListZalandoInteractor: ArticleListInteractor {
 
     func articles(completion: ([String]) -> Void) {
-        completion(["Example"])
+        completion(["Zalando article 1"])
     }
 }

@@ -7,6 +7,9 @@ import Nimble
 
 class ArticleListPresenterSpec: QuickSpec {
     override func spec() {
+
+        let articleTitle = "Example Article"
+
         var view: ArticleListViewStub!
         var interactor: ArticleListInteractorStub!
         var subject: ArticleListPresenter!
@@ -18,13 +21,17 @@ class ArticleListPresenterSpec: QuickSpec {
         }
 
         describe("view will appear") {
-            beforeEach {
-                subject.viewWillAppear()
+            context("one article available") {
+                beforeEach {
+                    interactor.articles = [articleTitle]
+                }
+
+                it("presents the article") {
+                    subject.viewWillAppear()
+                    expect(view.viewModel?.articles.first?.title).to(equal(articleTitle))
+                }
             }
 
-            it("presents a single article") {
-                expect(view.viewModel?.articles.first).toNot(beNil())
-            }
         }
     }
 }
