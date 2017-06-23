@@ -11,7 +11,10 @@ struct ArticleListRouter {
         let storyboard = UIStoryboard(name: storyboardIdentifier, bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: viewControllerIdentifier)
         let articleListViewController = viewController as? ArticleListViewController
-        let presenter = ArticleListPresenter(view: articleListViewController)
+        let presenter = ArticleListPresenter(
+            view: articleListViewController,
+            interactor: ArticleListZalandoInteractor()
+        )
 
         articleListViewController?.eventHandler = presenter
 

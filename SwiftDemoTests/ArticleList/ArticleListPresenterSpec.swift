@@ -8,11 +8,13 @@ import Nimble
 class ArticleListPresenterSpec: QuickSpec {
     override func spec() {
         var view: ArticleListViewStub!
+        var interactor: ArticleListInteractorStub!
         var subject: ArticleListPresenter!
 
         beforeEach {
             view = ArticleListViewStub()
-            subject = ArticleListPresenter(view: view)
+            interactor = ArticleListInteractorStub()
+            subject = ArticleListPresenter(view: view, interactor: interactor)
         }
 
         describe("view will appear") {
@@ -29,4 +31,12 @@ class ArticleListPresenterSpec: QuickSpec {
 
 private class ArticleListViewStub: ArticleListView {
     var viewModel: ArticleListViewModel?
+}
+
+private class ArticleListInteractorStub: ArticleListInteractor {
+    var articles = [String]()
+
+    func articles(completion: ([String]) -> Void) {
+        completion(articles)
+    }
 }
