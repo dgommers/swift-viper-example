@@ -2,6 +2,7 @@
 
 struct ArticleListPresenter {
     weak var view: ArticleListView?
+    let interactor: ArticleListInteractor
 }
 
 extension ArticleListPresenter: ArticleListEventHandler {
