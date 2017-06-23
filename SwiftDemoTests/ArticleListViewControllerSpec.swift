@@ -25,20 +25,14 @@ class ArticleListViewControllerSpec: QuickSpec {
         }
 
         describe("update") {
-            context("one article available") {
-                beforeEach {
-                    subject.viewModel = ArticleListViewModel(articles: [.mugshot])
-                }
-
-                it("shows the title") {
-                    let firstCell = self.tester().waitForCellInTableView(at: IndexPath(row: 0, section: 0))
-                    expect(firstCell?.textLabel?.text).to(equal(ArticleListItemViewModel.mugshot.title))
-                }
-            }
-
             context("three articles available") {
                 beforeEach {
                     subject.viewModel = ArticleListViewModel(articles: [.mugshot, .selfie, .apple])
+                }
+
+                it("shows the first title") {
+                    let firstCell = self.tester().waitForCellInTableView(at: IndexPath(row: 0, section: 0))
+                    expect(firstCell?.textLabel?.text).to(equal(ArticleListItemViewModel.mugshot.title))
                 }
 
                 it("shows the last title") {
