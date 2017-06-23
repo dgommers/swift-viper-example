@@ -1,9 +1,9 @@
 //  Copyright © 2017 Derk Gommers. All rights reserved.
 
 struct ArticleListViewModel {
-    var articles: [ArticleRowViewModel]
+    var articles: [ArticleListItemViewModel]
 }
 
-struct ArticleRowViewModel {
+struct ArticleListItemViewModel {
     var title: String
 }
