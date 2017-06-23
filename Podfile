@@ -8,6 +8,7 @@ target 'SwiftDemoApp' do
 end
 
 target 'SwiftDemoTests' do
+  pod 'KIF', '~> 3.5'
   pod 'Quick', '~> 1.0'
   pod 'Nimble', '~> 7.0'
 end
