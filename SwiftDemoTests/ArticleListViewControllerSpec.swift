@@ -30,7 +30,7 @@ class ArticleListViewControllerSpec: QuickSpec {
 
                 beforeEach {
                     article = ArticleListItemViewModel(title: "Mugshot maker")
-                    subject.update(viewModel: ArticleListViewModel(articles: [article]))
+                    subject.viewModel = ArticleListViewModel(articles: [article])
                 }
 
                 it("shows the title") {
