@@ -9,6 +9,7 @@ import Nimble
 class ArticleListViewControllerSpec: QuickSpec {
     override func spec() {
 
+        var eventHandler: ArticleListEventHandlerStub!
         var subject: ArticleListViewController!
 
         beforeEach {
@@ -16,12 +17,25 @@ class ArticleListViewControllerSpec: QuickSpec {
             let viewController = storyboard.instantiateViewController(withIdentifier: "ArticleListViewController")
             let navigationController = UINavigationController(rootViewController: viewController)
 
-            UIApplication.shared.keyWindow?.rootViewController = navigationController
+            eventHandler = ArticleListEventHandlerStub()
             subject = viewController as? ArticleListViewController
+            subject.eventHandler = eventHandler
+
+            UIApplication.shared.keyWindow?.rootViewController = navigationController
         }
 
         it("has title 'Articles'") {
             expect(subject.navigationItem.title).to(equal("Articles"))
+        }
+
+        describe("view will appear") {
+            beforeEach {
+                subject.viewWillAppear(false)
+            }
+
+            it("fires a view will appear event") {
+                expect(eventHandler.invokedViewWillAppear).to(beTrue())
+            }
         }
 
         describe("update") {
@@ -41,6 +55,15 @@ class ArticleListViewControllerSpec: QuickSpec {
                 }
             }
         }
+    }
+}
+
+class ArticleListEventHandlerStub: ArticleListEventHandler {
+
+    var invokedViewWillAppear = false
+
+    func viewWillAppear() {
+        invokedViewWillAppear = true
     }
 }
 

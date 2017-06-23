@@ -88,9 +88,9 @@
 		B3BEB0951EFD9120004F07AD /* ArticleList */ = {
 			isa = PBXGroup;
 			children = (
+				B3BEB0A31EFDA014004F07AD /* ArticleListPresenter.swift */,
 				B3BEB0961EFD9137004F07AD /* ArticleListViewController.swift */,
 				B3BEB09A1EFD93C6004F07AD /* ArticleListViewModel.swift */,
-				B3BEB0A31EFDA014004F07AD /* ArticleListPresenter.swift */,
 			);
 			path = ArticleList;
 			sourceTree = "<group>";
@@ -98,9 +98,11 @@
 		B3BEB09C1EFD946A004F07AD /* ArticleList */ = {
 			isa = PBXGroup;
 			children = (
+				B393DE1E1EFC703C000FDC53 /* ArticleListPresenterSpec.swift */,
 				B3BEB09D1EFD948C004F07AD /* ArticleListViewControllerSpec.swift */,
 			);
 			name = ArticleList;
+			path = ArticleList;
 			sourceTree = "<group>";
 		};
 		B3FCCF9B1EFC3E54004C46A2 = {
@@ -129,10 +131,10 @@
 				B3BEB0951EFD9120004F07AD /* ArticleList */,
 				B3FCCFA71EFC3E54004C46A2 /* AppDelegate.swift */,
 				B3FCCFAE1EFC3E54004C46A2 /* Assets.xcassets */,
+				B3BEB0A11EFD9BC5004F07AD /* CollectionSafety.swift */,
 				B3FCCFB31EFC3E54004C46A2 /* Info.plist */,
 				B3FCCFB01EFC3E54004C46A2 /* LaunchScreen.storyboard */,
 				B3FCCFAB1EFC3E54004C46A2 /* Main.storyboard */,
-				B3BEB0A11EFD9BC5004F07AD /* CollectionSafety.swift */,
 			);
 			path = SwiftDemoApp;
 			sourceTree = "<group>";
@@ -141,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				B3BEB09C1EFD946A004F07AD /* ArticleList */,
-				B393DE1E1EFC703C000FDC53 /* ArticleListPresenterSpec.swift */,
 				B3FCCFC11EFC3E85004C46A2 /* Info.plist */,
 				B3BEB09F1EFD95AF004F07AD /* XCTestCaseKIF.swift */,
 			);
