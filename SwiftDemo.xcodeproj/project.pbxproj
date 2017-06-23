@@ -10,8 +10,10 @@
 		6935E89081F2185D3C2FB0B1 /* Pods_SwiftDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EE7BBDD03037DD028294E9 /* Pods_SwiftDemoTests.framework */; };
 		A0863958FDF1D4C649AE86F8 /* Pods_SwiftDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E0CD0D263C4EBF3AC26C126 /* Pods_SwiftDemoApp.framework */; };
 		B393DE1F1EFC703C000FDC53 /* ExampleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B393DE1E1EFC703C000FDC53 /* ExampleSpec.swift */; };
-		B3BEB0971EFD9137004F07AD /* ArticleListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEB0961EFD9137004F07AD /* ArticleListTableViewController.swift */; };
+		B3BEB0971EFD9137004F07AD /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEB0961EFD9137004F07AD /* ArticleListViewController.swift */; };
 		B3BEB09B1EFD93C6004F07AD /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEB09A1EFD93C6004F07AD /* ArticleListViewModel.swift */; };
+		B3BEB09E1EFD948C004F07AD /* ArticleListViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEB09D1EFD948C004F07AD /* ArticleListViewControllerSpec.swift */; };
+		B3BEB0A01EFD95AF004F07AD /* XCTestCaseKIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEB09F1EFD95AF004F07AD /* XCTestCaseKIF.swift */; };
 		B3FCCFA81EFC3E54004C46A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FCCFA71EFC3E54004C46A2 /* AppDelegate.swift */; };
 		B3FCCFAD1EFC3E54004C46A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3FCCFAB1EFC3E54004C46A2 /* Main.storyboard */; };
 		B3FCCFAF1EFC3E54004C46A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FCCFAE1EFC3E54004C46A2 /* Assets.xcassets */; };
@@ -35,8 +37,10 @@
 		903CD887AA47853168E82B1F /* Pods-SwiftDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemoApp/Pods-SwiftDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		905B578B99B39E4A4DA688FA /* Pods-SwiftDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemoApp/Pods-SwiftDemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		B393DE1E1EFC703C000FDC53 /* ExampleSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleSpec.swift; sourceTree = "<group>"; };
-		B3BEB0961EFD9137004F07AD /* ArticleListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListTableViewController.swift; sourceTree = "<group>"; };
+		B3BEB0961EFD9137004F07AD /* ArticleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
 		B3BEB09A1EFD93C6004F07AD /* ArticleListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewModel.swift; sourceTree = "<group>"; };
+		B3BEB09D1EFD948C004F07AD /* ArticleListViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewControllerSpec.swift; sourceTree = "<group>"; };
+		B3BEB09F1EFD95AF004F07AD /* XCTestCaseKIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCaseKIF.swift; sourceTree = "<group>"; };
 		B3FCCFA41EFC3E54004C46A2 /* SwiftDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FCCFA71EFC3E54004C46A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3FCCFAC1EFC3E54004C46A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,10 +84,18 @@
 		B3BEB0951EFD9120004F07AD /* ArticleList */ = {
 			isa = PBXGroup;
 			children = (
-				B3BEB0961EFD9137004F07AD /* ArticleListTableViewController.swift */,
+				B3BEB0961EFD9137004F07AD /* ArticleListViewController.swift */,
 				B3BEB09A1EFD93C6004F07AD /* ArticleListViewModel.swift */,
 			);
 			path = ArticleList;
+			sourceTree = "<group>";
+		};
+		B3BEB09C1EFD946A004F07AD /* ArticleList */ = {
+			isa = PBXGroup;
+			children = (
+				B3BEB09D1EFD948C004F07AD /* ArticleListViewControllerSpec.swift */,
+			);
+			name = ArticleList;
 			sourceTree = "<group>";
 		};
 		B3FCCF9B1EFC3E54004C46A2 = {
@@ -122,8 +134,10 @@
 		B3FCCFBE1EFC3E85004C46A2 /* SwiftDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				B3BEB09C1EFD946A004F07AD /* ArticleList */,
 				B393DE1E1EFC703C000FDC53 /* ExampleSpec.swift */,
 				B3FCCFC11EFC3E85004C46A2 /* Info.plist */,
+				B3BEB09F1EFD95AF004F07AD /* XCTestCaseKIF.swift */,
 			);
 			path = SwiftDemoTests;
 			sourceTree = "<group>";
@@ -372,7 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3BEB0971EFD9137004F07AD /* ArticleListTableViewController.swift in Sources */,
+				B3BEB0971EFD9137004F07AD /* ArticleListViewController.swift in Sources */,
 				B3BEB09B1EFD93C6004F07AD /* ArticleListViewModel.swift in Sources */,
 				B3FCCFA81EFC3E54004C46A2 /* AppDelegate.swift in Sources */,
 			);
@@ -382,7 +396,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3BEB09E1EFD948C004F07AD /* ArticleListViewControllerSpec.swift in Sources */,
 				B393DE1F1EFC703C000FDC53 /* ExampleSpec.swift in Sources */,
+				B3BEB0A01EFD95AF004F07AD /* XCTestCaseKIF.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
