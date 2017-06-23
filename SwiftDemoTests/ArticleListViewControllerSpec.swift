@@ -26,18 +26,32 @@ class ArticleListViewControllerSpec: QuickSpec {
 
         describe("update") {
             context("one article available") {
-                var article: ArticleListItemViewModel!
-
                 beforeEach {
-                    article = ArticleListItemViewModel(title: "Mugshot maker")
-                    subject.viewModel = ArticleListViewModel(articles: [article])
+                    subject.viewModel = ArticleListViewModel(articles: [.mugshot])
                 }
 
                 it("shows the title") {
                     let firstCell = self.tester().waitForCellInTableView(at: IndexPath(row: 0, section: 0))
-                    expect(firstCell?.textLabel?.text).to(equal(article.title))
+                    expect(firstCell?.textLabel?.text).to(equal(ArticleListItemViewModel.mugshot.title))
+                }
+            }
+
+            context("three articles available") {
+                beforeEach {
+                    subject.viewModel = ArticleListViewModel(articles: [.mugshot, .selfie, .apple])
+                }
+
+                it("shows the last title") {
+                    let firstCell = self.tester().waitForCellInTableView(at: IndexPath(row: 2, section: 0))
+                    expect(firstCell?.textLabel?.text).to(equal(ArticleListItemViewModel.apple.title))
                 }
             }
         }
     }
+}
+
+extension ArticleListItemViewModel {
+    static var mugshot = ArticleListItemViewModel(title: "Mugshot Maker PRO+")
+    static var selfie = ArticleListItemViewModel(title: "Selfie Stick")
+    static var apple = ArticleListItemViewModel(title: "Apple iPhone")
 }
