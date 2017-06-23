@@ -2,6 +2,6 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ArticleListTableViewController: UITableViewController {
 
 }
