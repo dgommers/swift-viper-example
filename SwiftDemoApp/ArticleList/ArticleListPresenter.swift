@@ -3,10 +3,19 @@
 struct ArticleListPresenter {
     weak var view: ArticleListView?
     let interactor: ArticleListInteractor
+
+    fileprivate func present() {
+        interactor.articles { titles in
+            let items = titles.map { title in
+                ArticleListItemViewModel(title: title)
+            }
+            view?.viewModel = ArticleListViewModel(articles: items)
+        }
+    }
 }
 
 extension ArticleListPresenter: ArticleListEventHandler {
     func viewWillAppear() {
-        view?.viewModel = ArticleListViewModel(articles: [ArticleListItemViewModel(title: "Example")])
+        present()
     }
 }
