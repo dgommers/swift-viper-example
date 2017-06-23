@@ -12,6 +12,8 @@ protocol ArticleListEventHandler {
 
 class ArticleListViewController: UITableViewController, ArticleListView {
 
+    let cellIdentifier = "ArticleListItem"
+
     var viewModel: ArticleListViewModel?
     var eventHandler: ArticleListEventHandler?
 
@@ -25,7 +27,7 @@ class ArticleListViewController: UITableViewController, ArticleListView {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleListItem", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         let article = viewModel?.articles.element(at: indexPath.row)
         cell.textLabel?.text = article?.title
         return cell
