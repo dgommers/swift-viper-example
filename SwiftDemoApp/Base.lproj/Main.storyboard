@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,25 +19,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ArticleListItem" textLabel="D1r-SR-ryD" style="IBUITableViewCellStyleDefault" id="H5q-3c-rib">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H5q-3c-rib" id="J7D-4j-Vcu">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="D1r-SR-ryD">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ArticleListItemView" rowHeight="107" id="Cg0-wR-GKW" customClass="ArticleListItemView" customModule="SwiftDemoApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="107"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="107"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cg0-wR-GKW" id="F4L-nk-nkK">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="107"/>
@@ -50,25 +34,34 @@
                                                 <constraint firstAttribute="width" constant="100" id="pvU-sc-san"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ra-2x-FDQ">
-                                            <rect key="frame" x="132" y="16" width="227" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ra-2x-FDQ">
+                                            <rect key="frame" x="132" y="16" width="227" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€ 00,00" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGr-Gj-SD8">
+                                            <rect key="frame" x="291" y="70" width="60" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="2ra-2x-FDQ" firstAttribute="leading" secondItem="KQB-uH-HA6" secondAttribute="trailing" constant="16" id="8OS-um-3ip"/>
-                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="2ra-2x-FDQ" secondAttribute="bottom" constant="16" id="AaK-22-55r"/>
                                         <constraint firstItem="KQB-uH-HA6" firstAttribute="leading" secondItem="F4L-nk-nkK" secondAttribute="leading" constant="16" id="K21-DL-eq0"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="dGr-Gj-SD8" secondAttribute="trailing" constant="16" id="Kyr-Ur-brU"/>
                                         <constraint firstItem="KQB-uH-HA6" firstAttribute="top" secondItem="F4L-nk-nkK" secondAttribute="top" constant="16" id="dgw-r9-c8o"/>
+                                        <constraint firstAttribute="bottom" secondItem="dGr-Gj-SD8" secondAttribute="bottom" constant="16" id="e2l-Qm-pBU"/>
                                         <constraint firstItem="2ra-2x-FDQ" firstAttribute="top" secondItem="F4L-nk-nkK" secondAttribute="top" constant="16" id="mxC-3H-feW"/>
                                         <constraint firstAttribute="trailing" secondItem="2ra-2x-FDQ" secondAttribute="trailing" constant="16" id="ndK-2T-ayF"/>
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="KQB-uH-HA6" secondAttribute="bottom" constant="16" id="xT2-Fi-DAS"/>
+                                        <constraint firstItem="dGr-Gj-SD8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2ra-2x-FDQ" secondAttribute="bottom" constant="8" id="yS0-E0-3gD"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="titleLabel" destination="2ra-2x-FDQ" id="aHA-1s-0wj"/>
+                                    <outlet property="nameLabel" destination="2ra-2x-FDQ" id="41U-lP-gtK"/>
+                                    <outlet property="priceLabel" destination="dGr-Gj-SD8" id="6kh-NH-5Cd"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

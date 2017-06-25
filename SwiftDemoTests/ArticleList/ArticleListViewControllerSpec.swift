@@ -53,12 +53,17 @@ class ArticleListViewControllerSpec: QuickSpec {
 
                 it("shows the first title") {
                     let item = waitForItem(at: 0)
-                    expect(item?.titleLabel?.text).to(equal(ArticleListItemViewModel.mugshot.name))
+                    expect(item?.nameLabel?.text).to(equal(ArticleListItemViewModel.mugshot.name))
+                }
+
+                it("shows the first price") {
+                    let item = waitForItem(at: 0)
+                    expect(item?.priceLabel?.text).to(equal(ArticleListItemViewModel.mugshot.price))
                 }
 
                 it("shows the last title") {
                     let item = waitForItem(at: 2)
-                    expect(item?.titleLabel?.text).to(equal(ArticleListItemViewModel.apple.name))
+                    expect(item?.nameLabel?.text).to(equal(ArticleListItemViewModel.apple.name))
                 }
             }
 

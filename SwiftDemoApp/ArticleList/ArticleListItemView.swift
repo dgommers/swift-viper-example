@@ -6,11 +6,13 @@ class ArticleListItemView: UITableViewCell {
 
     static let estimatedHeight = CGFloat(100 / 4 * 3 + 16 * 2)
 
-    @IBOutlet weak var titleLabel: UILabel?
+    @IBOutlet weak var nameLabel: UILabel?
+    @IBOutlet weak var priceLabel: UILabel?
 
     var viewModel: ArticleListItemViewModel? {
         didSet {
-            titleLabel?.text = viewModel?.name
+            nameLabel?.text = viewModel?.name
+            priceLabel?.text = viewModel?.price
         }
     }
 
