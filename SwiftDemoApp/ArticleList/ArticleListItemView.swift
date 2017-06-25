@@ -10,7 +10,7 @@ class ArticleListItemView: UITableViewCell {
 
     var viewModel: ArticleListItemViewModel? {
         didSet {
-            titleLabel?.text = viewModel?.title
+            titleLabel?.text = viewModel?.name
         }
     }
 

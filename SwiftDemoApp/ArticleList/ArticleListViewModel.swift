@@ -5,5 +5,6 @@ struct ArticleListViewModel {
 }
 
 struct ArticleListItemViewModel {
-    var title: String
+    var name: String?
+    var price: String?
 }

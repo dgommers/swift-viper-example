@@ -33,7 +33,7 @@ class ArticleListPresenterSpec: QuickSpec {
                 }
 
                 it("presents the article") {
-                    expect(view.viewModel?.articles.first?.title).to(equal(Article.tesla.name))
+                    expect(view.viewModel?.articles.first?.name).to(equal(Article.tesla.name))
                 }
             }
 
@@ -76,7 +76,7 @@ class ArticleListPresenterSpec: QuickSpec {
                 }
 
                 it("presents the other article as well") {
-                    expect(view.viewModel?.articles.last?.title).to(equal(Article.spaceX.name))
+                    expect(view.viewModel?.articles.last?.name).to(equal(Article.spaceX.name))
                 }
 
                 it("shows two articles in total") {
