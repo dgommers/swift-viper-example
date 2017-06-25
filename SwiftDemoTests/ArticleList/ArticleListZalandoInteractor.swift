@@ -51,6 +51,10 @@ class ArticleListZalandoInteractorSpec: QuickSpec {
                     expect(session.invokedRequest?.url.host).to(equal("api.zalando.com"))
                 }
 
+                it("has a secure connection") {
+                    expect(session.invokedRequest?.url.scheme).to(equal("https"))
+                }
+
                 it("looks for articles") {
                     expect(session.invokedRequest?.url.path).to(equal("/articles"))
                 }
