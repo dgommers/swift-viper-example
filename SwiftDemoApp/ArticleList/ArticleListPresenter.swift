@@ -24,13 +24,13 @@ class ArticleListPresenter {
         requestedPage = page
         interactor.articles(page: page) { [weak self] articles in
             self?.currentPage = page
-            self?.appendToViewModel(articles: articles.flatMap { $0.name })
+            self?.appendToViewModel(articles: articles)
         }
     }
 
-    private func appendToViewModel(articles: [String]) {
-        let articles = articles.map { name in
-            ArticleListItemViewModel(name: name, price: nil)
+    private func appendToViewModel(articles: [Article]) {
+        let articles = articles.map { article in
+            ArticleListItemViewModel(name: article.name, price: article.price)
         }
 
         if view?.viewModel == nil {
