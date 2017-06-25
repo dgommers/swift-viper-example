@@ -14,7 +14,11 @@ class ArticleListViewController: UITableViewController, ArticleListView {
 
     let cellIdentifier = "ArticleListItem"
 
-    var viewModel: ArticleListViewModel?
+    var viewModel: ArticleListViewModel? {
+        didSet {
+            tableView?.reloadData()
+        }
+    }
     var eventHandler: ArticleListEventHandler?
 
     override func viewWillAppear(_ animated: Bool) {

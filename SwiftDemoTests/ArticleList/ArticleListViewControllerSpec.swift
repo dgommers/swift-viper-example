@@ -12,16 +12,18 @@ class ArticleListViewControllerSpec: QuickSpec {
         var eventHandler: ArticleListEventHandlerStub!
         var subject: ArticleListViewController!
 
-        beforeEach {
+        beforeSuite {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "ArticleListViewController")
             let navigationController = UINavigationController(rootViewController: viewController)
 
-            eventHandler = ArticleListEventHandlerStub()
             subject = viewController as? ArticleListViewController
-            subject.eventHandler = eventHandler
-
             UIApplication.shared.keyWindow?.rootViewController = navigationController
+        }
+
+        beforeEach {
+            eventHandler = ArticleListEventHandlerStub()
+            subject.eventHandler = eventHandler
         }
 
         it("has title 'Articles'") {
@@ -39,7 +41,7 @@ class ArticleListViewControllerSpec: QuickSpec {
         }
 
         describe("update") {
-            context("three articles available") {
+            describe("three articles available") {
                 beforeEach {
                     subject.viewModel = ArticleListViewModel(articles: [.mugshot, .selfie, .apple])
                 }
@@ -52,6 +54,17 @@ class ArticleListViewControllerSpec: QuickSpec {
                 it("shows the last title") {
                     let firstCell = self.tester().waitForCellInTableView(at: IndexPath(row: 2, section: 0))
                     expect(firstCell?.textLabel?.text).to(equal(ArticleListItemViewModel.apple.title))
+                }
+
+                describe("available articles changed") {
+                    beforeEach {
+                        subject.viewModel = ArticleListViewModel(articles: [.selfie])
+                    }
+
+                    it("shows the new article title") {
+                        let firstCell = self.tester().waitForCellInTableView(at: IndexPath(row: 0, section: 0))
+                        expect(firstCell?.textLabel?.text).to(equal(ArticleListItemViewModel.selfie.title))
+                    }
                 }
             }
         }
