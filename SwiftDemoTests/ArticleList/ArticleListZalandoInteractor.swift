@@ -64,13 +64,22 @@ class ArticleListZalandoInteractorSpec: QuickSpec {
                 }
             }
 
-            describe("request completes") {
+            describe("response with articles") {
+                let articleNameTesla = "Tesla"
+                let articleNameSpaceX = "SpaceX"
+
                 beforeEach {
-                    session.invokedRequest?.completionHandler(nil, nil, nil)
+                    let response = ["content": [
+                        ["name": articleNameTesla],
+                        ["name": articleNameSpaceX]
+                    ]]
+
+                    let data = try? JSONSerialization.data(withJSONObject: response, options: [])
+                    session.invokedRequest?.completionHandler(data, nil, nil)
                 }
 
-                it("reports an empty list") {
-                    expect(reported).to(equal([]))
+                it("reports the article names") {
+                    expect(reported).to(equal([articleNameTesla, articleNameSpaceX]))
                 }
             }
         }
