@@ -9,7 +9,7 @@ struct ArticleListPresenter {
             let items = titles.map { title in
                 ArticleListItemViewModel(title: title)
             }
-            view?.viewModel = ArticleListViewModel(articles: items)
+            self.view?.viewModel = ArticleListViewModel(articles: items)
         }
     }
 }

@@ -43,7 +43,7 @@ private class ArticleListViewStub: ArticleListView {
 private class ArticleListInteractorStub: ArticleListInteractor {
     var articles = [String]()
 
-    func articles(completion: ([String]) -> Void) {
+    func articles(completion: @escaping ([String]) -> Void) {
         completion(articles)
     }
 }
