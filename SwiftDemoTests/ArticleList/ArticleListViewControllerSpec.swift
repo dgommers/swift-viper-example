@@ -26,6 +26,11 @@ class ArticleListViewControllerSpec: QuickSpec {
             subject.eventHandler = eventHandler
         }
 
+        func waitForItem(at row: Int) -> ArticleListItemView? {
+            let indexPath = IndexPath(row: row, section: 0)
+            return self.tester().waitForCellInTableView(at: indexPath) as? ArticleListItemView
+        }
+
         it("has title 'Articles'") {
             expect(subject.navigationItem.title).to(equal("Articles"))
         }
@@ -47,13 +52,13 @@ class ArticleListViewControllerSpec: QuickSpec {
                 }
 
                 it("shows the first title") {
-                    let firstCell = self.tester().waitForCellInTableView(at: IndexPath(row: 0, section: 0))
-                    expect(firstCell?.textLabel?.text).to(equal(ArticleListItemViewModel.mugshot.title))
+                    let item = waitForItem(at: 0)
+                    expect(item?.titleLabel?.text).to(equal(ArticleListItemViewModel.mugshot.title))
                 }
 
                 it("shows the last title") {
-                    let firstCell = self.tester().waitForCellInTableView(at: IndexPath(row: 2, section: 0))
-                    expect(firstCell?.textLabel?.text).to(equal(ArticleListItemViewModel.apple.title))
+                    let item = waitForItem(at: 2)
+                    expect(item?.titleLabel?.text).to(equal(ArticleListItemViewModel.apple.title))
                 }
             }
 
@@ -68,7 +73,7 @@ class ArticleListViewControllerSpec: QuickSpec {
 
                 describe("scroll to last row") {
                     beforeEach {
-                        self.tester().waitForCellInTableView(at: IndexPath(row: numberOfArticles - 1, section: 0))
+                        _ = waitForItem(at: numberOfArticles - 1)
                     }
 
                     it("fires a view did reach bottom event") {
