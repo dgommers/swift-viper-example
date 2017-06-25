@@ -203,7 +203,6 @@
 				B3FCCFB91EFC3E85004C46A2 /* Sources */,
 				B3FCCFBA1EFC3E85004C46A2 /* Frameworks */,
 				B3FCCFBB1EFC3E85004C46A2 /* Resources */,
-				B393DE1B1EFC658B000FDC53 /* SwiftLint */,
 				CA3285590BAF1D2BAE110D1B /* [CP] Embed Pods Frameworks */,
 				4087A49CBFE89421D2A76C25 /* [CP] Copy Pods Resources */,
 			);
@@ -340,20 +339,6 @@
 			showEnvVarsInLog = 0;
 		};
 		B393DE1A1EFC6575000FDC53 /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-		B393DE1B1EFC658B000FDC53 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
