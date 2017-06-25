@@ -99,16 +99,3 @@ class ArticleListPresenterSpec: QuickSpec {
         }
     }
 }
-
-private class ArticleListViewStub: ArticleListView {
-    var viewModel: ArticleListViewModel?
-}
-
-private class ArticleListInteractorStub: ArticleListInteractor {
-
-    var invokedArticles: (page: UInt, completion: ([String]) -> Void)?
-
-    func articles(page: UInt, completion: @escaping ([String]) -> Void) {
-        invokedArticles = (page, completion)
-    }
-}
