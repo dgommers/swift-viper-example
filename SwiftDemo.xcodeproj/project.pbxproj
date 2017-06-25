@@ -114,16 +114,88 @@
 			path = System;
 			sourceTree = "<group>";
 		};
-		B3BEB0951EFD9120004F07AD /* ArticleList */ = {
+		B3BA76C01F0040D1009ACE0F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B35CB0BF1F00248800988E74 /* ArticleListItemView.swift */,
+				B3BEB0961EFD9137004F07AD /* ArticleListViewController.swift */,
+				B3BEB09A1EFD93C6004F07AD /* ArticleListViewModel.swift */,
+			);
+			name = View;
+			path = View;
+			sourceTree = "<group>";
+		};
+		B3BA76C11F0040F6009ACE0F /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B35CB0C11F0030BB00988E74 /* Article.swift */,
+			);
+			name = Entity;
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		B3BA76C21F0040FE009ACE0F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B3BEB0A91EFDAF8D004F07AD /* ArticleListZalandoInteractor.swift */,
+			);
+			name = Interactor;
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B3BA76C41F004110009ACE0F /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
 				B3BEB0A31EFDA014004F07AD /* ArticleListPresenter.swift */,
+			);
+			name = Presenter;
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B3BA76C51F00411A009ACE0F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B393DE1E1EFC703C000FDC53 /* ArticleListPresenterSpec.swift */,
+			);
+			name = Presenter;
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B3BA76C61F00411F009ACE0F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B3BEB0AB1EFDAFB8004F07AD /* ArticleListZalandoInteractorSpec.swift */,
+			);
+			name = Interactor;
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B3BA76C71F004125009ACE0F /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B35CB0C31F0033F200988E74 /* ArticleSpec.swift */,
+			);
+			name = Entity;
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		B3BA76C81F00412F009ACE0F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B3BEB09D1EFD948C004F07AD /* ArticleListViewControllerSpec.swift */,
+			);
+			name = View;
+			path = View;
+			sourceTree = "<group>";
+		};
+		B3BEB0951EFD9120004F07AD /* ArticleList */ = {
+			isa = PBXGroup;
+			children = (
+				B3BA76C11F0040F6009ACE0F /* Entity */,
+				B3BA76C21F0040FE009ACE0F /* Interactor */,
+				B3BA76C41F004110009ACE0F /* Presenter */,
+				B3BA76C01F0040D1009ACE0F /* View */,
 				B3BEB0A51EFDA9AA004F07AD /* ArticleListRouter.swift */,
-				B3BEB0961EFD9137004F07AD /* ArticleListViewController.swift */,
-				B3BEB09A1EFD93C6004F07AD /* ArticleListViewModel.swift */,
-				B3BEB0A91EFDAF8D004F07AD /* ArticleListZalandoInteractor.swift */,
-				B35CB0BF1F00248800988E74 /* ArticleListItemView.swift */,
-				B35CB0C11F0030BB00988E74 /* Article.swift */,
 			);
 			path = ArticleList;
 			sourceTree = "<group>";
@@ -131,12 +203,12 @@
 		B3BEB09C1EFD946A004F07AD /* ArticleList */ = {
 			isa = PBXGroup;
 			children = (
-				B393DE1E1EFC703C000FDC53 /* ArticleListPresenterSpec.swift */,
+				B3BA76C71F004125009ACE0F /* Entity */,
+				B3BA76C61F00411F009ACE0F /* Interactor */,
+				B3BA76C51F00411A009ACE0F /* Presenter */,
+				B3BA76C81F00412F009ACE0F /* View */,
 				B3BEB0A71EFDA9B9004F07AD /* ArticleListRouterSpec.swift */,
 				B35CB0BD1F00127800988E74 /* ArticleListStubs.swift */,
-				B3BEB09D1EFD948C004F07AD /* ArticleListViewControllerSpec.swift */,
-				B3BEB0AB1EFDAFB8004F07AD /* ArticleListZalandoInteractorSpec.swift */,
-				B35CB0C31F0033F200988E74 /* ArticleSpec.swift */,
 			);
 			path = ArticleList;
 			sourceTree = "<group>";
