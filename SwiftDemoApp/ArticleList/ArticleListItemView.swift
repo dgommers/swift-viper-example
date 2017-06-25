@@ -15,6 +15,7 @@ class ArticleListItemView: UITableViewCell {
         didSet {
             nameLabel?.text = viewModel?.name
             priceLabel?.text = viewModel?.price
+            stockLabel?.text = nil
         }
     }
 
