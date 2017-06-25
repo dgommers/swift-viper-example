@@ -12,7 +12,6 @@ struct ArticleListZalandoInteractor: ArticleListInteractor {
     private let host = "api.zalando.com"
 
     func articles(page: UInt, completion: @escaping ([String]) -> Void) {
-        print("Requesting page \(page)")
         let url = URL(string: "https://\(host)/articles?fields=name&page=\(page)")!
         session.request(with: url) { data, _, _ in
             let root = data?.json as? [String: Any]
