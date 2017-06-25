@@ -80,21 +80,7 @@ class ArticleListViewControllerSpec: QuickSpec {
     }
 }
 
-private class ArticleListEventHandlerStub: ArticleListEventHandler {
-
-    var invokedViewWillAppear = false
-    var invokedDidReachBottom = false
-
-    func viewWillAppear() {
-        invokedViewWillAppear = true
-    }
-
-    func viewDidReachBottom() {
-        invokedDidReachBottom = true
-    }
-}
-
-private extension ArticleListItemViewModel {
+extension ArticleListItemViewModel {
     static var mugshot = ArticleListItemViewModel(title: "Mugshot Maker PRO+")
     static var selfie = ArticleListItemViewModel(title: "Selfie Stick")
     static var apple = ArticleListItemViewModel(title: "Apple iPhone")
