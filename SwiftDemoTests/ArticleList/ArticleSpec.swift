@@ -20,6 +20,6 @@ class ArticleSpec: QuickSpec {
 }
 
 extension Article {
-    static var tesla = Article(name: "Tesla")
-    static var spaceX = Article(name: "SpaceX")
+    static var tesla = Article(name: "Tesla", price: "€ 200")
+    static var spaceX = Article(name: "SpaceX", price: nil)
 }
