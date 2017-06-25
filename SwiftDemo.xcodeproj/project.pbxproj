@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6935E89081F2185D3C2FB0B1 /* Pods_SwiftDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EE7BBDD03037DD028294E9 /* Pods_SwiftDemoTests.framework */; };
 		A0863958FDF1D4C649AE86F8 /* Pods_SwiftDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E0CD0D263C4EBF3AC26C126 /* Pods_SwiftDemoApp.framework */; };
+		B35CB0B91EFFF9BC00988E74 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35CB0B81EFFF9BC00988E74 /* URLSession.swift */; };
+		B35CB0BB1EFFFA0D00988E74 /* SystemStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35CB0BA1EFFFA0D00988E74 /* SystemStubs.swift */; };
 		B393DE1F1EFC703C000FDC53 /* ArticleListPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B393DE1E1EFC703C000FDC53 /* ArticleListPresenterSpec.swift */; };
 		B3BEB0971EFD9137004F07AD /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEB0961EFD9137004F07AD /* ArticleListViewController.swift */; };
 		B3BEB09B1EFD93C6004F07AD /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEB09A1EFD93C6004F07AD /* ArticleListViewModel.swift */; };
@@ -42,6 +44,8 @@
 		4147F128E7A8FF8C493E0F0D /* Pods-SwiftDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemoTests/Pods-SwiftDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		903CD887AA47853168E82B1F /* Pods-SwiftDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemoApp/Pods-SwiftDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		905B578B99B39E4A4DA688FA /* Pods-SwiftDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemoApp/Pods-SwiftDemoApp.release.xcconfig"; sourceTree = "<group>"; };
+		B35CB0B81EFFF9BC00988E74 /* URLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
+		B35CB0BA1EFFFA0D00988E74 /* SystemStubs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemStubs.swift; sourceTree = "<group>"; };
 		B393DE1E1EFC703C000FDC53 /* ArticleListPresenterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListPresenterSpec.swift; sourceTree = "<group>"; };
 		B3BEB0961EFD9137004F07AD /* ArticleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
 		B3BEB09A1EFD93C6004F07AD /* ArticleListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewModel.swift; sourceTree = "<group>"; };
@@ -93,6 +97,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B35CB0B71EFFF98A00988E74 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				B3BEB0A11EFD9BC5004F07AD /* CollectionSafety.swift */,
+				B35CB0B81EFFF9BC00988E74 /* URLSession.swift */,
+			);
+			name = System;
+			path = System;
+			sourceTree = "<group>";
+		};
 		B3BEB0951EFD9120004F07AD /* ArticleList */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,9 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				B3BEB0951EFD9120004F07AD /* ArticleList */,
+				B35CB0B71EFFF98A00988E74 /* System */,
 				B3FCCFA71EFC3E54004C46A2 /* AppDelegate.swift */,
 				B3FCCFAE1EFC3E54004C46A2 /* Assets.xcassets */,
-				B3BEB0A11EFD9BC5004F07AD /* CollectionSafety.swift */,
 				B3FCCFB31EFC3E54004C46A2 /* Info.plist */,
 				B3FCCFB01EFC3E54004C46A2 /* LaunchScreen.storyboard */,
 				B3FCCFAB1EFC3E54004C46A2 /* Main.storyboard */,
@@ -155,6 +169,7 @@
 			children = (
 				B3BEB09C1EFD946A004F07AD /* ArticleList */,
 				B3FCCFC11EFC3E85004C46A2 /* Info.plist */,
+				B35CB0BA1EFFFA0D00988E74 /* SystemStubs.swift */,
 				B3BEB09F1EFD95AF004F07AD /* XCTestCaseKIF.swift */,
 			);
 			path = SwiftDemoTests;
@@ -391,6 +406,7 @@
 			files = (
 				B3BEB0971EFD9137004F07AD /* ArticleListViewController.swift in Sources */,
 				B3BEB0A21EFD9BC5004F07AD /* CollectionSafety.swift in Sources */,
+				B35CB0B91EFFF9BC00988E74 /* URLSession.swift in Sources */,
 				B3BEB09B1EFD93C6004F07AD /* ArticleListViewModel.swift in Sources */,
 				B3BEB0A61EFDA9AA004F07AD /* ArticleListRouter.swift in Sources */,
 				B3BEB0A41EFDA014004F07AD /* ArticleListPresenter.swift in Sources */,
@@ -407,6 +423,7 @@
 				B3BEB09E1EFD948C004F07AD /* ArticleListViewControllerSpec.swift in Sources */,
 				B393DE1F1EFC703C000FDC53 /* ArticleListPresenterSpec.swift in Sources */,
 				B3BEB0A01EFD95AF004F07AD /* XCTestCaseKIF.swift in Sources */,
+				B35CB0BB1EFFFA0D00988E74 /* SystemStubs.swift in Sources */,
 				B3BEB0A81EFDA9B9004F07AD /* ArticleListRouterSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
