@@ -1,6 +1,7 @@
 //  Copyright © 2017 Derk Gommers. All rights reserved.
 
 struct ArticleListPresenter {
+
     weak var view: ArticleListView?
     let interactor: ArticleListInteractor
 
@@ -15,6 +16,10 @@ struct ArticleListPresenter {
 }
 
 extension ArticleListPresenter: ArticleListEventHandler {
+    func viewDidReachBottom() {
+
+    }
+
     func viewWillAppear() {
         present()
     }

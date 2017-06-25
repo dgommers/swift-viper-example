@@ -55,15 +55,24 @@ class ArticleListViewControllerSpec: QuickSpec {
                     let firstCell = self.tester().waitForCellInTableView(at: IndexPath(row: 2, section: 0))
                     expect(firstCell?.textLabel?.text).to(equal(ArticleListItemViewModel.apple.title))
                 }
+            }
 
-                describe("available articles changed") {
+            describe("many articles available") {
+                let numberOfArticles = 40
+
+                beforeEach {
+                    subject.viewModel = ArticleListViewModel(articles:
+                        Array(repeating: .mugshot, count: numberOfArticles)
+                    )
+                }
+
+                describe("scroll to last row") {
                     beforeEach {
-                        subject.viewModel = ArticleListViewModel(articles: [.selfie])
+                        self.tester().waitForCellInTableView(at: IndexPath(row: numberOfArticles - 1, section: 0))
                     }
 
-                    it("shows the new article title") {
-                        let firstCell = self.tester().waitForCellInTableView(at: IndexPath(row: 0, section: 0))
-                        expect(firstCell?.textLabel?.text).to(equal(ArticleListItemViewModel.selfie.title))
+                    it("fires a view did reach bottom event") {
+                        expect(eventHandler.invokedDidReachBottom).to(beTrue())
                     }
                 }
             }
@@ -74,9 +83,14 @@ class ArticleListViewControllerSpec: QuickSpec {
 class ArticleListEventHandlerStub: ArticleListEventHandler {
 
     var invokedViewWillAppear = false
+    var invokedDidReachBottom = false
 
     func viewWillAppear() {
         invokedViewWillAppear = true
+    }
+
+    func viewDidReachBottom() {
+        invokedDidReachBottom = true
     }
 }
 

@@ -7,6 +7,7 @@ protocol ArticleListInteractor {
 }
 
 struct ArticleListZalandoInteractor: ArticleListInteractor {
+
     var session: URLSessionType = URLSession(configuration: .default, delegate: nil, delegateQueue: .main)
 
     func articles(completion: @escaping ([String]) -> Void) {
