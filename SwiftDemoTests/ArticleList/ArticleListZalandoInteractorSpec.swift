@@ -60,8 +60,8 @@ class ArticleListZalandoInteractorSpec: QuickSpec {
                     expect(session.invokedRequest?.url.path).to(equal("/articles"))
                 }
 
-                it("only uses the name field") {
-                    expect(session.invokedRequest?.url.query).to(contain("fields=name"))
+                it("limts the number of fields") {
+                    expect(session.invokedRequest?.url.query).to(contain("fields=name,units.price.formatted"))
                 }
 
                 it("requires the correct page") {
@@ -72,8 +72,8 @@ class ArticleListZalandoInteractorSpec: QuickSpec {
             describe("response with articles") {
                 beforeEach {
                     let response = ["content": [
-                        ["name": Article.tesla.name],
-                        ["name": Article.spaceX.name]
+                        ["name": Article.tesla.name as Any, "units": [["price": ["formatted": Article.tesla.price]]]],
+                        ["name": Article.spaceX.name as Any]
                     ]]
 
                     let data = try? JSONSerialization.data(withJSONObject: response, options: [])
