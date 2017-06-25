@@ -53,12 +53,12 @@ class ArticleListViewControllerSpec: QuickSpec {
 
                 it("shows the first title") {
                     let item = waitForItem(at: 0)
-                    expect(item?.titleLabel?.text).to(equal(ArticleListItemViewModel.mugshot.title))
+                    expect(item?.titleLabel?.text).to(equal(ArticleListItemViewModel.mugshot.name))
                 }
 
                 it("shows the last title") {
                     let item = waitForItem(at: 2)
-                    expect(item?.titleLabel?.text).to(equal(ArticleListItemViewModel.apple.title))
+                    expect(item?.titleLabel?.text).to(equal(ArticleListItemViewModel.apple.name))
                 }
             }
 
@@ -86,7 +86,7 @@ class ArticleListViewControllerSpec: QuickSpec {
 }
 
 extension ArticleListItemViewModel {
-    static var mugshot = ArticleListItemViewModel(title: "Mugshot Maker PRO+")
-    static var selfie = ArticleListItemViewModel(title: "Selfie Stick")
-    static var apple = ArticleListItemViewModel(title: "Apple iPhone")
+    static var mugshot = ArticleListItemViewModel(name: "Mugshot Maker PRO+", price: "€ 100")
+    static var selfie = ArticleListItemViewModel(name: "Selfie Stick", price: nil)
+    static var apple = ArticleListItemViewModel(name: "Apple iPhone", price: "€ 50.00")
 }

@@ -29,8 +29,8 @@ class ArticleListPresenter {
     }
 
     private func appendToViewModel(articles: [String]) {
-        let articles = articles.map { title in
-            ArticleListItemViewModel(title: title)
+        let articles = articles.map { name in
+            ArticleListItemViewModel(name: name, price: nil)
         }
 
         if view?.viewModel == nil {
