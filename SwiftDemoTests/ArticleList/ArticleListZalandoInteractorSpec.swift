@@ -37,11 +37,12 @@ class ArticleListZalandoInteractorSpec: QuickSpec {
         }
 
         describe("articles") {
+            let page = UInt(2)
             var reported: [String]?
 
             beforeEach {
                 reported = nil
-                subject.articles {
+                subject.articles(page: page) {
                     reported = $0
                 }
             }
@@ -60,7 +61,11 @@ class ArticleListZalandoInteractorSpec: QuickSpec {
                 }
 
                 it("only uses the name field") {
-                    expect(session.invokedRequest?.url.query).to(equal("fields=name"))
+                    expect(session.invokedRequest?.url.query).to(contain("fields=name"))
+                }
+
+                it("requires the correct page") {
+                    expect(session.invokedRequest?.url.query).to(contain("&page=\(page)"))
                 }
             }
 
