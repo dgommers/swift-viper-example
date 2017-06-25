@@ -46,22 +46,48 @@
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o0e-F8-Wjd">
+                                            <rect key="frame" x="156" y="74.5" width="11.5" height="12"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3T6-JV-meS">
+                                            <rect key="frame" x="132" y="72.5" width="16" height="16"/>
+                                            <color key="backgroundColor" white="0.91959635419999997" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="16" id="MTa-hD-q3r"/>
+                                                <constraint firstAttribute="width" constant="16" id="eRQ-Ri-jWy"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="8"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="3T6-JV-meS" firstAttribute="leading" secondItem="2ra-2x-FDQ" secondAttribute="leading" id="1Q0-1g-MmE"/>
+                                        <constraint firstItem="o0e-F8-Wjd" firstAttribute="leading" secondItem="3T6-JV-meS" secondAttribute="trailing" constant="8" id="1pU-56-Lr2"/>
                                         <constraint firstItem="2ra-2x-FDQ" firstAttribute="leading" secondItem="KQB-uH-HA6" secondAttribute="trailing" constant="16" id="8OS-um-3ip"/>
                                         <constraint firstItem="KQB-uH-HA6" firstAttribute="leading" secondItem="F4L-nk-nkK" secondAttribute="leading" constant="16" id="K21-DL-eq0"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="dGr-Gj-SD8" secondAttribute="trailing" constant="16" id="Kyr-Ur-brU"/>
+                                        <constraint firstItem="o0e-F8-Wjd" firstAttribute="centerY" secondItem="3T6-JV-meS" secondAttribute="centerY" id="baj-Aq-Nb3"/>
                                         <constraint firstItem="KQB-uH-HA6" firstAttribute="top" secondItem="F4L-nk-nkK" secondAttribute="top" constant="16" id="dgw-r9-c8o"/>
                                         <constraint firstAttribute="bottom" secondItem="dGr-Gj-SD8" secondAttribute="bottom" constant="16" id="e2l-Qm-pBU"/>
+                                        <constraint firstItem="o0e-F8-Wjd" firstAttribute="centerY" secondItem="dGr-Gj-SD8" secondAttribute="centerY" id="kun-OT-Zoz"/>
                                         <constraint firstItem="2ra-2x-FDQ" firstAttribute="top" secondItem="F4L-nk-nkK" secondAttribute="top" constant="16" id="mxC-3H-feW"/>
                                         <constraint firstAttribute="trailing" secondItem="2ra-2x-FDQ" secondAttribute="trailing" constant="16" id="ndK-2T-ayF"/>
+                                        <constraint firstItem="3T6-JV-meS" firstAttribute="centerY" secondItem="dGr-Gj-SD8" secondAttribute="centerY" id="pKC-cc-dOc"/>
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="KQB-uH-HA6" secondAttribute="bottom" constant="16" id="xT2-Fi-DAS"/>
                                         <constraint firstItem="dGr-Gj-SD8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2ra-2x-FDQ" secondAttribute="bottom" constant="8" id="yS0-E0-3gD"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="2ra-2x-FDQ" id="41U-lP-gtK"/>
-                                    <outlet property="priceLabel" destination="dGr-Gj-SD8" id="6kh-NH-5Cd"/>
+                                    <outlet property="priceLabel" destination="dGr-Gj-SD8" id="LGZ-RE-yQh"/>
+                                    <outlet property="stockIndicatorView" destination="3T6-JV-meS" id="ht9-Fy-q6Y"/>
+                                    <outlet property="stockLabel" destination="o0e-F8-Wjd" id="CDu-Vr-1hh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
