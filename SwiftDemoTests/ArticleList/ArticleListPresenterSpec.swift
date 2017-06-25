@@ -8,9 +8,6 @@ import Nimble
 class ArticleListPresenterSpec: QuickSpec {
     override func spec() {
 
-        let articleTitleCat = "Cat"
-        let articleTitlePizza = "Pizza"
-
         var view: ArticleListViewStub!
         var interactor: ArticleListInteractorStub!
         var subject: ArticleListPresenter!
@@ -32,11 +29,11 @@ class ArticleListPresenterSpec: QuickSpec {
 
             describe("one article available") {
                 beforeEach {
-                    interactor.invokedArticles?.completion([articleTitleCat])
+                    interactor.invokedArticles?.completion([.tesla])
                 }
 
                 it("presents the article") {
-                    expect(view.viewModel?.articles.first?.title).to(equal(articleTitleCat))
+                    expect(view.viewModel?.articles.first?.title).to(equal(Article.tesla.name))
                 }
             }
 
@@ -55,7 +52,7 @@ class ArticleListPresenterSpec: QuickSpec {
         describe("view did reach bottom") {
             beforeEach {
                 subject.viewWillAppear()
-                interactor.invokedArticles?.completion([articleTitleCat])
+                interactor.invokedArticles?.completion([.tesla])
                 subject.viewDidReachBottom()
             }
 
@@ -75,11 +72,11 @@ class ArticleListPresenterSpec: QuickSpec {
 
             describe("another article available") {
                 beforeEach {
-                    interactor.invokedArticles?.completion([articleTitlePizza])
+                    interactor.invokedArticles?.completion([.spaceX])
                 }
 
                 it("presents the other article as well") {
-                    expect(view.viewModel?.articles.last?.title).to(equal(articleTitlePizza))
+                    expect(view.viewModel?.articles.last?.title).to(equal(Article.spaceX.name))
                 }
 
                 it("shows two articles in total") {

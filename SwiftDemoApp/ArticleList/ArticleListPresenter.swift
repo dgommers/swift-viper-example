@@ -24,7 +24,7 @@ class ArticleListPresenter {
         requestedPage = page
         interactor.articles(page: page) { [weak self] articles in
             self?.currentPage = page
-            self?.appendToViewModel(articles: articles)
+            self?.appendToViewModel(articles: articles.flatMap { $0.name })
         }
     }
 

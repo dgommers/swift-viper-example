@@ -38,7 +38,7 @@ class ArticleListZalandoInteractorSpec: QuickSpec {
 
         describe("articles") {
             let page = UInt(2)
-            var reported: [String]?
+            var reported: [Article]?
 
             beforeEach {
                 reported = nil
@@ -70,13 +70,10 @@ class ArticleListZalandoInteractorSpec: QuickSpec {
             }
 
             describe("response with articles") {
-                let articleNameTesla = "Tesla"
-                let articleNameSpaceX = "SpaceX"
-
                 beforeEach {
                     let response = ["content": [
-                        ["name": articleNameTesla],
-                        ["name": articleNameSpaceX]
+                        ["name": Article.tesla.name],
+                        ["name": Article.spaceX.name]
                     ]]
 
                     let data = try? JSONSerialization.data(withJSONObject: response, options: [])
@@ -84,7 +81,7 @@ class ArticleListZalandoInteractorSpec: QuickSpec {
                 }
 
                 it("reports the article names") {
-                    expect(reported).to(equal([articleNameTesla, articleNameSpaceX]))
+                    expect(reported).to(equal([Article.tesla, Article.spaceX]))
                 }
             }
         }

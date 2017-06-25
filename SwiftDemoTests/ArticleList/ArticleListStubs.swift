@@ -8,9 +8,9 @@ class ArticleListViewStub: ArticleListView {
 
 class ArticleListInteractorStub: ArticleListInteractor {
 
-    var invokedArticles: (page: UInt, completion: ([String]) -> Void)?
+    var invokedArticles: (page: UInt, completion: ([Article]) -> Void)?
 
-    func articles(page: UInt, completion: @escaping ([String]) -> Void) {
+    func articles(page: UInt, completion: @escaping ([Article]) -> Void) {
         invokedArticles = (page, completion)
     }
 }
