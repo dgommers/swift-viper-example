@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,6 +35,42 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ArticleListItemView" rowHeight="107" id="Cg0-wR-GKW" customClass="ArticleListItemView" customModule="SwiftDemoApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="107"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cg0-wR-GKW" id="F4L-nk-nkK">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="107"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KQB-uH-HA6">
+                                            <rect key="frame" x="16" y="16" width="100" height="75"/>
+                                            <color key="backgroundColor" white="0.91959635416666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="KQB-uH-HA6" secondAttribute="height" multiplier="4:3" id="bf1-Cd-g1G"/>
+                                                <constraint firstAttribute="width" constant="100" id="pvU-sc-san"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ra-2x-FDQ">
+                                            <rect key="frame" x="132" y="16" width="227" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="2ra-2x-FDQ" firstAttribute="leading" secondItem="KQB-uH-HA6" secondAttribute="trailing" constant="16" id="8OS-um-3ip"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="2ra-2x-FDQ" secondAttribute="bottom" constant="16" id="AaK-22-55r"/>
+                                        <constraint firstItem="KQB-uH-HA6" firstAttribute="leading" secondItem="F4L-nk-nkK" secondAttribute="leading" constant="16" id="K21-DL-eq0"/>
+                                        <constraint firstItem="KQB-uH-HA6" firstAttribute="top" secondItem="F4L-nk-nkK" secondAttribute="top" constant="16" id="dgw-r9-c8o"/>
+                                        <constraint firstItem="2ra-2x-FDQ" firstAttribute="top" secondItem="F4L-nk-nkK" secondAttribute="top" constant="16" id="mxC-3H-feW"/>
+                                        <constraint firstAttribute="trailing" secondItem="2ra-2x-FDQ" secondAttribute="trailing" constant="16" id="ndK-2T-ayF"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="KQB-uH-HA6" secondAttribute="bottom" constant="16" id="xT2-Fi-DAS"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLabel" destination="2ra-2x-FDQ" id="aHA-1s-0wj"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="yTZ-h5-DfZ" id="1wk-p5-YQC"/>
@@ -45,7 +82,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ew-nS-QxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-266" y="-3"/>
+            <point key="canvasLocation" x="-266.39999999999998" y="-3.1484257871064472"/>
         </scene>
     </scenes>
 </document>

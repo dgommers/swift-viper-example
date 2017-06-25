@@ -18,9 +18,16 @@ class ArticleListViewController: UITableViewController, ArticleListView {
             tableView?.reloadData()
         }
     }
+
     var eventHandler: ArticleListEventHandler?
     private let reachingBottomTreshold = CGFloat(10)
-    private let cellIdentifier = "ArticleListItem"
+    private let cellIdentifier = "ArticleListItemView"
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = ArticleListItemView.estimatedHeight
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -33,8 +40,8 @@ class ArticleListViewController: UITableViewController, ArticleListView {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        let article = viewModel?.articles.element(at: indexPath.row)
-        cell.textLabel?.text = article?.title
+        let item = cell as? ArticleListItemView
+        item?.viewModel = viewModel?.articles.element(at: indexPath.row)
         return cell
     }
 
