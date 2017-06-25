@@ -28,12 +28,19 @@ class ArticleListPresenterSpec: QuickSpec {
             }
 
             describe("one article available") {
+                var itemViewModel: ArticleListItemViewModel?
+
                 beforeEach {
                     interactor.invokedArticles?.completion([.tesla])
+                    itemViewModel = view.viewModel?.articles.first
                 }
 
-                it("presents the article") {
-                    expect(view.viewModel?.articles.first?.name).to(equal(Article.tesla.name))
+                it("takes the article name") {
+                    expect(itemViewModel?.name).to(equal(Article.tesla.name))
+                }
+
+                it("takes the article price") {
+                    expect(itemViewModel?.price).to(equal(Article.tesla.price))
                 }
             }
 
