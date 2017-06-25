@@ -13,10 +13,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return false
         }
 
+        applyTheme()
+
         window = UIWindow()
         window?.rootViewController = UINavigationController(rootViewController: viewController)
         window?.makeKeyAndVisible()
 
         return true
     }
+
+    func applyTheme() {
+        let navigationBarAppearance = UINavigationBar.appearance()
+        navigationBarAppearance.barTintColor = .darkOrange
+
+        let whiteForeground = [NSForegroundColorAttributeName: UIColor.white]
+        navigationBarAppearance.titleTextAttributes = whiteForeground
+    }
+}
+
+extension UIColor {
+    static var darkOrange = UIColor(red: 0.9, green: 0.3, blue: 0, alpha: 1)
 }
