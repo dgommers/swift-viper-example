@@ -20,17 +20,7 @@ struct ArticleListZalandoInteractor: ArticleListInteractor {
     }
 }
 
-protocol URLSessionType {
-    func request(with: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
-}
-
-extension URLSession: URLSessionType {
-    func request(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        dataTask(with: url, completionHandler: completionHandler).resume()
-    }
-}
-
-extension Data {
+private extension Data {
     var json: Any? {
         return try? JSONSerialization.jsonObject(with: self, options: [])
     }

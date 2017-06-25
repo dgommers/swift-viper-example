@@ -85,11 +85,3 @@ class ArticleListZalandoInteractorSpec: QuickSpec {
         }
     }
 }
-
-class URLSessionStub: URLSessionType {
-    var invokedRequest: (url: URL, completionHandler: (Data?, URLResponse?, Error?) -> Void)?
-
-    func request(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        invokedRequest = (url: url, completionHandler: completionHandler)
-    }
-}
