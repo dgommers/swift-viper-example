@@ -21,7 +21,7 @@
 		B3BEB0A61EFDA9AA004F07AD /* ArticleListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEB0A51EFDA9AA004F07AD /* ArticleListRouter.swift */; };
 		B3BEB0A81EFDA9B9004F07AD /* ArticleListRouterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEB0A71EFDA9B9004F07AD /* ArticleListRouterSpec.swift */; };
 		B3BEB0AA1EFDAF8D004F07AD /* ArticleListZalandoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEB0A91EFDAF8D004F07AD /* ArticleListZalandoInteractor.swift */; };
-		B3BEB0AC1EFDAFB8004F07AD /* ArticleListZalandoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEB0AB1EFDAFB8004F07AD /* ArticleListZalandoInteractor.swift */; };
+		B3BEB0AC1EFDAFB8004F07AD /* ArticleListZalandoInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEB0AB1EFDAFB8004F07AD /* ArticleListZalandoInteractorSpec.swift */; };
 		B3FCCFA81EFC3E54004C46A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FCCFA71EFC3E54004C46A2 /* AppDelegate.swift */; };
 		B3FCCFAD1EFC3E54004C46A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3FCCFAB1EFC3E54004C46A2 /* Main.storyboard */; };
 		B3FCCFAF1EFC3E54004C46A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FCCFAE1EFC3E54004C46A2 /* Assets.xcassets */; };
@@ -56,7 +56,7 @@
 		B3BEB0A51EFDA9AA004F07AD /* ArticleListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListRouter.swift; sourceTree = "<group>"; };
 		B3BEB0A71EFDA9B9004F07AD /* ArticleListRouterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListRouterSpec.swift; sourceTree = "<group>"; };
 		B3BEB0A91EFDAF8D004F07AD /* ArticleListZalandoInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListZalandoInteractor.swift; sourceTree = "<group>"; };
-		B3BEB0AB1EFDAFB8004F07AD /* ArticleListZalandoInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListZalandoInteractor.swift; sourceTree = "<group>"; };
+		B3BEB0AB1EFDAFB8004F07AD /* ArticleListZalandoInteractorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListZalandoInteractorSpec.swift; sourceTree = "<group>"; };
 		B3FCCFA41EFC3E54004C46A2 /* SwiftDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FCCFA71EFC3E54004C46A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3FCCFAC1EFC3E54004C46A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,7 +103,6 @@
 				B3BEB0A11EFD9BC5004F07AD /* CollectionSafety.swift */,
 				B35CB0B81EFFF9BC00988E74 /* URLSession.swift */,
 			);
-			name = System;
 			path = System;
 			sourceTree = "<group>";
 		};
@@ -125,7 +124,7 @@
 				B393DE1E1EFC703C000FDC53 /* ArticleListPresenterSpec.swift */,
 				B3BEB0A71EFDA9B9004F07AD /* ArticleListRouterSpec.swift */,
 				B3BEB09D1EFD948C004F07AD /* ArticleListViewControllerSpec.swift */,
-				B3BEB0AB1EFDAFB8004F07AD /* ArticleListZalandoInteractor.swift */,
+				B3BEB0AB1EFDAFB8004F07AD /* ArticleListZalandoInteractorSpec.swift */,
 			);
 			path = ArticleList;
 			sourceTree = "<group>";
@@ -419,7 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3BEB0AC1EFDAFB8004F07AD /* ArticleListZalandoInteractor.swift in Sources */,
+				B3BEB0AC1EFDAFB8004F07AD /* ArticleListZalandoInteractorSpec.swift in Sources */,
 				B3BEB09E1EFD948C004F07AD /* ArticleListViewControllerSpec.swift in Sources */,
 				B393DE1F1EFC703C000FDC53 /* ArticleListPresenterSpec.swift in Sources */,
 				B3BEB0A01EFD95AF004F07AD /* XCTestCaseKIF.swift in Sources */,
