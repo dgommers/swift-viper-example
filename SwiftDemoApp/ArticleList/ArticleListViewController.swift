@@ -8,10 +8,12 @@ protocol ArticleListView: class {
 
 protocol ArticleListEventHandler {
     func viewWillAppear()
+    func viewDidReachBottom()
 }
 
 class ArticleListViewController: UITableViewController, ArticleListView {
 
+    let reachingBottomTreshold = CGFloat(10)
     let cellIdentifier = "ArticleListItem"
 
     var viewModel: ArticleListViewModel? {
@@ -35,5 +37,14 @@ class ArticleListViewController: UITableViewController, ArticleListView {
         let article = viewModel?.articles.element(at: indexPath.row)
         cell.textLabel?.text = article?.title
         return cell
+    }
+
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let content = scrollView.contentSize.height
+        let viewport = scrollView.frame.size.height
+        let offset = scrollView.contentOffset.y
+        if content - offset - reachingBottomTreshold < viewport {
+            eventHandler?.viewDidReachBottom()
+        }
     }
 }
