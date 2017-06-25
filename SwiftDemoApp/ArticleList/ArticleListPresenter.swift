@@ -5,32 +5,50 @@ class ArticleListPresenter {
     weak var view: ArticleListView?
     let interactor: ArticleListInteractor
 
-    private var currentPage = UInt(0)
+    fileprivate var requestedPage = UInt(0)
+    fileprivate var currentPage = UInt(0)
 
     init(view: ArticleListView?, interactor: ArticleListInteractor) {
         self.view = view
         self.interactor = interactor
     }
 
-    fileprivate func present() {
-        guard currentPage == 0 else { return }
-        currentPage += 1
+    fileprivate func presentNextPage() {
+        let isIdle = requestedPage == currentPage
+        if isIdle {
+            present(page: currentPage + 1)
+        }
+    }
 
-        interactor.articles(page: 1) { [weak self] articles in
-            let items = articles.map { title in
-                ArticleListItemViewModel(title: title)
-            }
-            self?.view?.viewModel = ArticleListViewModel(articles: items)
+    private func present(page: UInt) {
+        requestedPage = page
+        interactor.articles(page: page) { [weak self] articles in
+            self?.currentPage = page
+            self?.appendToViewModel(articles: articles)
+        }
+    }
+
+    private func appendToViewModel(articles: [String]) {
+        let articles = articles.map { title in
+            ArticleListItemViewModel(title: title)
+        }
+
+        if view?.viewModel == nil {
+            view?.viewModel = ArticleListViewModel(articles: articles)
+        } else {
+            view?.viewModel?.articles.append(contentsOf: articles)
         }
     }
 }
 
 extension ArticleListPresenter: ArticleListEventHandler {
     func viewDidReachBottom() {
-
+        presentNextPage()
     }
 
     func viewWillAppear() {
-        present()
+        if currentPage == 0 {
+            presentNextPage()
+        }
     }
 }

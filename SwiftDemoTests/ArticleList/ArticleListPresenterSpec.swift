@@ -8,7 +8,8 @@ import Nimble
 class ArticleListPresenterSpec: QuickSpec {
     override func spec() {
 
-        let articleTitle = "Example Article"
+        let articleTitleCat = "Cat"
+        let articleTitlePizza = "Pizza"
 
         var view: ArticleListViewStub!
         var interactor: ArticleListInteractorStub!
@@ -21,29 +22,76 @@ class ArticleListPresenterSpec: QuickSpec {
         }
 
         describe("view will appear") {
-            context("one article available") {
-                beforeEach {
-                    interactor.articles = [articleTitle]
-                    subject.viewWillAppear()
-                }
+            beforeEach {
+                subject.viewWillAppear()
+            }
 
-                it("gets the first page") {
-                    expect(interactor.invokedArticlesPage).to(equal(1))
+            it("loads the first page") {
+                expect(interactor.invokedArticles?.page).to(equal(1))
+            }
+
+            describe("one article available") {
+                beforeEach {
+                    interactor.invokedArticles?.completion([articleTitleCat])
                 }
 
                 it("presents the article") {
-                    expect(view.viewModel?.articles.first?.title).to(equal(articleTitle))
+                    expect(view.viewModel?.articles.first?.title).to(equal(articleTitleCat))
                 }
 
-                describe("view will appear") {
+                describe("view did reach bottom") {
                     beforeEach {
-                        interactor.invokedArticlesPage = nil
-                        subject.viewWillAppear()
+                        subject.viewDidReachBottom()
                     }
 
-                    it("does not get articles again") {
-                        expect(interactor.invokedArticlesPage).to(beNil())
+                    it("loads the second page") {
+                        expect(interactor.invokedArticles?.page).to(equal(2))
                     }
+
+                    describe("view did reach bottom") {
+                        beforeEach {
+                            subject.viewDidReachBottom()
+                        }
+
+                        it("does not loads the third page immediately") {
+                            expect(interactor.invokedArticles?.page).toNot(equal(3))
+                        }
+                    }
+
+                    describe("another article available") {
+                        beforeEach {
+                            interactor.invokedArticles?.completion([articleTitlePizza])
+                        }
+
+                        it("presents the other article as well") {
+                            expect(view.viewModel?.articles.last?.title).to(equal(articleTitlePizza))
+                        }
+
+                        it("shows two articles in total") {
+                            expect(view.viewModel?.articles.count).to(equal(2))
+                        }
+
+                        describe("view did reach bottom") {
+                            beforeEach {
+                                subject.viewDidReachBottom()
+                            }
+
+                            it("loads the third page") {
+                                expect(interactor.invokedArticles?.page).to(equal(3))
+                            }
+                        }
+                    }
+                }
+            }
+
+            describe("view will appear") {
+                beforeEach {
+                    interactor.invokedArticles = nil
+                    subject.viewWillAppear()
+                }
+
+                it("does not get articles again") {
+                    expect(interactor.invokedArticles).to(beNil())
                 }
             }
         }
@@ -55,11 +103,10 @@ private class ArticleListViewStub: ArticleListView {
 }
 
 private class ArticleListInteractorStub: ArticleListInteractor {
-    var invokedArticlesPage: UInt?
-    var articles = [String]()
+
+    var invokedArticles: (page: UInt, completion: ([String]) -> Void)?
 
     func articles(page: UInt, completion: @escaping ([String]) -> Void) {
-        invokedArticlesPage = page
-        completion(articles)
+        invokedArticles = (page, completion)
     }
 }
