@@ -13,15 +13,14 @@ protocol ArticleListEventHandler {
 
 class ArticleListViewController: UITableViewController, ArticleListView {
 
-    let reachingBottomTreshold = CGFloat(10)
-    let cellIdentifier = "ArticleListItem"
-
     var viewModel: ArticleListViewModel? {
         didSet {
             tableView?.reloadData()
         }
     }
     var eventHandler: ArticleListEventHandler?
+    private let reachingBottomTreshold = CGFloat(10)
+    private let cellIdentifier = "ArticleListItem"
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
