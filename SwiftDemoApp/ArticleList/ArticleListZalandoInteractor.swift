@@ -3,7 +3,7 @@
 import Foundation
 
 protocol ArticleListInteractor {
-    func articles(completion: @escaping ([String]) -> Void)
+    func articles(page: UInt, completion: @escaping ([String]) -> Void)
 }
 
 struct ArticleListZalandoInteractor: ArticleListInteractor {
@@ -11,8 +11,9 @@ struct ArticleListZalandoInteractor: ArticleListInteractor {
     var session: URLSessionType = URLSession(configuration: .default, delegate: nil, delegateQueue: .main)
     private let host = "api.zalando.com"
 
-    func articles(completion: @escaping ([String]) -> Void) {
-        let url = URL(string: "https://\(host)/articles?fields=name")!
+    func articles(page: UInt, completion: @escaping ([String]) -> Void) {
+        print("Requesting page \(page)")
+        let url = URL(string: "https://\(host)/articles?fields=name&page=\(page)")!
         session.request(with: url) { data, _, _ in
             let root = data?.json as? [String: Any]
             let content = root?["content"] as? [[String: String]]

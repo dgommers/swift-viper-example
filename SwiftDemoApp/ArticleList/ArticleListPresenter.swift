@@ -1,16 +1,26 @@
 //  Copyright © 2017 Derk Gommers. All rights reserved.
 
-struct ArticleListPresenter {
+class ArticleListPresenter {
 
     weak var view: ArticleListView?
     let interactor: ArticleListInteractor
 
+    private var currentPage = UInt(0)
+
+    init(view: ArticleListView?, interactor: ArticleListInteractor) {
+        self.view = view
+        self.interactor = interactor
+    }
+
     fileprivate func present() {
-        interactor.articles { titles in
-            let items = titles.map { title in
+        guard currentPage == 0 else { return }
+        currentPage += 1
+
+        interactor.articles(page: 1) { [weak self] articles in
+            let items = articles.map { title in
                 ArticleListItemViewModel(title: title)
             }
-            self.view?.viewModel = ArticleListViewModel(articles: items)
+            self?.view?.viewModel = ArticleListViewModel(articles: items)
         }
     }
 }
