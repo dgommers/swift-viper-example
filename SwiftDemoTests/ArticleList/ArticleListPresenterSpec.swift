@@ -38,50 +38,6 @@ class ArticleListPresenterSpec: QuickSpec {
                 it("presents the article") {
                     expect(view.viewModel?.articles.first?.title).to(equal(articleTitleCat))
                 }
-
-                describe("view did reach bottom") {
-                    beforeEach {
-                        subject.viewDidReachBottom()
-                    }
-
-                    it("loads the second page") {
-                        expect(interactor.invokedArticles?.page).to(equal(2))
-                    }
-
-                    describe("view did reach bottom") {
-                        beforeEach {
-                            subject.viewDidReachBottom()
-                        }
-
-                        it("does not loads the third page immediately") {
-                            expect(interactor.invokedArticles?.page).toNot(equal(3))
-                        }
-                    }
-
-                    describe("another article available") {
-                        beforeEach {
-                            interactor.invokedArticles?.completion([articleTitlePizza])
-                        }
-
-                        it("presents the other article as well") {
-                            expect(view.viewModel?.articles.last?.title).to(equal(articleTitlePizza))
-                        }
-
-                        it("shows two articles in total") {
-                            expect(view.viewModel?.articles.count).to(equal(2))
-                        }
-
-                        describe("view did reach bottom") {
-                            beforeEach {
-                                subject.viewDidReachBottom()
-                            }
-
-                            it("loads the third page") {
-                                expect(interactor.invokedArticles?.page).to(equal(3))
-                            }
-                        }
-                    }
-                }
             }
 
             describe("view will appear") {
@@ -92,6 +48,52 @@ class ArticleListPresenterSpec: QuickSpec {
 
                 it("does not get articles again") {
                     expect(interactor.invokedArticles).to(beNil())
+                }
+            }
+        }
+
+        describe("view did reach bottom") {
+            beforeEach {
+                subject.viewWillAppear()
+                interactor.invokedArticles?.completion([articleTitleCat])
+                subject.viewDidReachBottom()
+            }
+
+            it("loads the second page") {
+                expect(interactor.invokedArticles?.page).to(equal(2))
+            }
+
+            describe("view did reach bottom") {
+                beforeEach {
+                    subject.viewDidReachBottom()
+                }
+
+                it("does not loads the third page immediately") {
+                    expect(interactor.invokedArticles?.page).toNot(equal(3))
+                }
+            }
+
+            describe("another article available") {
+                beforeEach {
+                    interactor.invokedArticles?.completion([articleTitlePizza])
+                }
+
+                it("presents the other article as well") {
+                    expect(view.viewModel?.articles.last?.title).to(equal(articleTitlePizza))
+                }
+
+                it("shows two articles in total") {
+                    expect(view.viewModel?.articles.count).to(equal(2))
+                }
+
+                describe("view did reach bottom") {
+                    beforeEach {
+                        subject.viewDidReachBottom()
+                    }
+
+                    it("loads the third page") {
+                        expect(interactor.invokedArticles?.page).to(equal(3))
+                    }
                 }
             }
         }
