@@ -54,12 +54,14 @@ struct ArticleMedia {
 }
 
 struct ArticleImage {
-    var smallHdUrl: String?
+    var smallHdURL: URL?
 
     init() { }
 
     init(json: Any? = nil) {
         let jsonRoot = json as? [String: Any]
-        smallHdUrl = jsonRoot?["smallHdUrl"] as? String
+        if let jsonSmallHdURL = jsonRoot?["smallHdUrl"] as? String {
+            smallHdURL = URL(string: jsonSmallHdURL)
+        }
     }
 }
