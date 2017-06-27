@@ -16,6 +16,7 @@
 		B35CB0C21F0030BB00988E74 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35CB0C11F0030BB00988E74 /* Article.swift */; };
 		B35CB0C41F0033F200988E74 /* ArticleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35CB0C31F0033F200988E74 /* ArticleSpec.swift */; };
 		B393DE1F1EFC703C000FDC53 /* ArticleListPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B393DE1E1EFC703C000FDC53 /* ArticleListPresenterSpec.swift */; };
+		B3BBAFCD1F02EE7300A59006 /* Article.json in Resources */ = {isa = PBXBuildFile; fileRef = B3BBAFCC1F02EE7300A59006 /* Article.json */; };
 		B3BEB0971EFD9137004F07AD /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEB0961EFD9137004F07AD /* ArticleListViewController.swift */; };
 		B3BEB09B1EFD93C6004F07AD /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEB09A1EFD93C6004F07AD /* ArticleListViewModel.swift */; };
 		B3BEB09E1EFD948C004F07AD /* ArticleListViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEB09D1EFD948C004F07AD /* ArticleListViewControllerSpec.swift */; };
@@ -55,6 +56,7 @@
 		B35CB0C11F0030BB00988E74 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		B35CB0C31F0033F200988E74 /* ArticleSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleSpec.swift; sourceTree = "<group>"; };
 		B393DE1E1EFC703C000FDC53 /* ArticleListPresenterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListPresenterSpec.swift; sourceTree = "<group>"; };
+		B3BBAFCC1F02EE7300A59006 /* Article.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Article.json; sourceTree = "<group>"; };
 		B3BEB0961EFD9137004F07AD /* ArticleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
 		B3BEB09A1EFD93C6004F07AD /* ArticleListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewModel.swift; sourceTree = "<group>"; };
 		B3BEB09D1EFD948C004F07AD /* ArticleListViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewControllerSpec.swift; sourceTree = "<group>"; };
@@ -121,7 +123,6 @@
 				B3BEB0961EFD9137004F07AD /* ArticleListViewController.swift */,
 				B3BEB09A1EFD93C6004F07AD /* ArticleListViewModel.swift */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -130,7 +131,6 @@
 			children = (
 				B35CB0C11F0030BB00988E74 /* Article.swift */,
 			);
-			name = Entity;
 			path = Entity;
 			sourceTree = "<group>";
 		};
@@ -139,7 +139,6 @@
 			children = (
 				B3BEB0A91EFDAF8D004F07AD /* ArticleListZalandoInteractor.swift */,
 			);
-			name = Interactor;
 			path = Interactor;
 			sourceTree = "<group>";
 		};
@@ -148,7 +147,6 @@
 			children = (
 				B3BEB0A31EFDA014004F07AD /* ArticleListPresenter.swift */,
 			);
-			name = Presenter;
 			path = Presenter;
 			sourceTree = "<group>";
 		};
@@ -157,7 +155,6 @@
 			children = (
 				B393DE1E1EFC703C000FDC53 /* ArticleListPresenterSpec.swift */,
 			);
-			name = Presenter;
 			path = Presenter;
 			sourceTree = "<group>";
 		};
@@ -166,7 +163,6 @@
 			children = (
 				B3BEB0AB1EFDAFB8004F07AD /* ArticleListZalandoInteractorSpec.swift */,
 			);
-			name = Interactor;
 			path = Interactor;
 			sourceTree = "<group>";
 		};
@@ -174,8 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				B35CB0C31F0033F200988E74 /* ArticleSpec.swift */,
+				B3BBAFCC1F02EE7300A59006 /* Article.json */,
 			);
-			name = Entity;
 			path = Entity;
 			sourceTree = "<group>";
 		};
@@ -184,7 +180,6 @@
 			children = (
 				B3BEB09D1EFD948C004F07AD /* ArticleListViewControllerSpec.swift */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -370,6 +365,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3BBAFCD1F02EE7300A59006 /* Article.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
