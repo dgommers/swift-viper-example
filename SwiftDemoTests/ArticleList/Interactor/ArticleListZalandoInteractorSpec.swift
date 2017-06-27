@@ -70,10 +70,13 @@ class ArticleListZalandoInteractorSpec: QuickSpec {
             }
 
             describe("response with articles") {
+                let nameTesla = "Tesla"
+                let nameSpaceX = "SpaceX"
+
                 beforeEach {
                     let response = ["content": [
-                        ["name": Article.tesla.name as Any, "units": [["price": ["formatted": Article.tesla.price]]]],
-                        ["name": Article.spaceX.name as Any]
+                        ["name": nameTesla],
+                        ["name": nameSpaceX]
                     ]]
 
                     let data = try? JSONSerialization.data(withJSONObject: response, options: [])
@@ -81,7 +84,8 @@ class ArticleListZalandoInteractorSpec: QuickSpec {
                 }
 
                 it("reports the article names") {
-                    expect(reported).to(equal([Article.tesla, Article.spaceX]))
+                    let reportedNames = reported?.map { $0.name }
+                    expect(reportedNames).to(equal([nameTesla, nameSpaceX]))
                 }
             }
         }

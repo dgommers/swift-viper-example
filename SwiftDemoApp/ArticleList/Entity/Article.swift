@@ -4,28 +4,37 @@ import Foundation
 
 struct Article {
     var name: String?
-    var price: String?
+    var units: [ArticleUnit]?
 
-    init(name: String?, price: String?) {
-        self.name = name
-        self.price = price
+    init() { }
+
+    init(json: Any?) {
+        let jsonRoot = json as? [String: Any]
+        let jsonUnits = jsonRoot?["units"] as? [Any]
+
+        units = jsonUnits?.map { ArticleUnit(json: $0) }
+        name = jsonRoot?["name"] as? String
     }
 }
 
-extension Article {
-    init(json: Any) {
-        let root = json as? [String: Any]
-        let units = root?["units"] as? [[String: Any]]
-        let unitPrice = units?.first?["price"] as? [String: Any]
+struct ArticleUnit {
+    var price: ArticlePrice?
 
-        name = root?["name"] as? String
-        price = unitPrice?["formatted"] as? String
+    init() { }
+
+    init(json: Any?) {
+        let jsonRoot = json as? [String: Any]
+        price = ArticlePrice(json: jsonRoot?["price"])
     }
 }
 
-extension Article: Equatable {
-    static func == (lhs: Article, rhs: Article) -> Bool {
-        return lhs.name == rhs.name
-            && lhs.price == rhs.price
+struct ArticlePrice {
+    var formatted: String?
+
+    init() { }
+
+    init(json: Any? = nil) {
+        let jsonRoot = json as? [String: Any]
+        formatted = jsonRoot?["formatted"] as? String
     }
 }
