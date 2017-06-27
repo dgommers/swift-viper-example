@@ -5,6 +5,7 @@ import Foundation
 struct Article {
     var name: String?
     var units: [ArticleUnit]?
+    var media: ArticleMedia?
 
     init() { }
 
@@ -12,8 +13,9 @@ struct Article {
         let jsonRoot = json as? [String: Any]
         let jsonUnits = jsonRoot?["units"] as? [Any]
 
-        units = jsonUnits?.map { ArticleUnit(json: $0) }
         name = jsonRoot?["name"] as? String
+        units = jsonUnits?.map { ArticleUnit(json: $0) }
+        media = ArticleMedia(json: jsonRoot?["media"])
     }
 }
 
@@ -36,5 +38,28 @@ struct ArticlePrice {
     init(json: Any? = nil) {
         let jsonRoot = json as? [String: Any]
         formatted = jsonRoot?["formatted"] as? String
+    }
+}
+
+struct ArticleMedia {
+    var images: [ArticleImage]?
+
+    init() { }
+
+    init(json: Any? = nil) {
+        let jsonRoot = json as? [String: Any]
+        let jsonImages = jsonRoot?["images"] as? [Any]
+        images = jsonImages?.map { ArticleImage(json: $0) }
+    }
+}
+
+struct ArticleImage {
+    var smallHdUrl: String?
+
+    init() { }
+
+    init(json: Any? = nil) {
+        let jsonRoot = json as? [String: Any]
+        smallHdUrl = jsonRoot?["smallHdUrl"] as? String
     }
 }
