@@ -37,8 +37,8 @@ class ArticleSpec: QuickSpec {
                 }
 
                 it("parses the first small hd url") {
-                    let expected = "https://i2.ztat.net/catalog_hd/BE/82/4G/00/2C/11/BE824G002-C11@8.jpg"
-                    expect(subject.media?.images?.first?.smallHdUrl).to(equal(expected))
+                    let expected = URL(string: "https://i2.ztat.net/catalog_hd/BE/82/4G/00/2C/11/BE824G002-C11@8.jpg")
+                    expect(subject.media?.images?.first?.smallHdURL).to(equal(expected))
                 }
             }
         }
