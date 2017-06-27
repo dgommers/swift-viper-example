@@ -16,15 +16,30 @@ class ArticleSpec: QuickSpec {
             }
 
             it("parses the name") {
-                expect(subject.name).to(equal("Long sleeved top - stormy weather"))
+                let expected = "Long sleeved top - stormy weather"
+                expect(subject.name).to(equal(expected))
             }
 
-            it("parses each unit") {
-                expect(subject.units?.count).to(equal(5))
+            describe("units") {
+                it("parses each unit") {
+                    expect(subject.units?.count).to(equal(5))
+                }
+
+                it("parses the first unit price") {
+                    let expected = "£11.00"
+                    expect(subject.units?.first?.price?.formatted).to(equal(expected))
+                }
             }
 
-            it("parses the first unit price") {
-                expect(subject.units?.first?.price?.formatted).to(equal("£11.00"))
+            describe("media") {
+                it("parses each image") {
+                    expect(subject.media?.images?.count).to(equal(4))
+                }
+
+                it("parses the first small hd url") {
+                    let expected = "https://i2.ztat.net/catalog_hd/BE/82/4G/00/2C/11/BE824G002-C11@8.jpg"
+                    expect(subject.media?.images?.first?.smallHdUrl).to(equal(expected))
+                }
             }
         }
     }
