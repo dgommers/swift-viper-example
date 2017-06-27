@@ -31,6 +31,7 @@ class ArticleListPresenterSpec: QuickSpec {
                 var itemViewModel: ArticleListItemViewModel?
 
                 beforeEach {
+
                     interactor.invokedArticles?.completion([.tesla])
                     itemViewModel = view.viewModel?.articles.first
                 }
@@ -39,8 +40,9 @@ class ArticleListPresenterSpec: QuickSpec {
                     expect(itemViewModel?.name).to(equal(Article.tesla.name))
                 }
 
-                it("takes the article price") {
-                    expect(itemViewModel?.price).to(equal(Article.tesla.price))
+                it("takes the first formatted unit price") {
+                    let expected = Article.tesla.units?.first?.price?.formatted
+                    expect(itemViewModel?.price).to(equal(expected))
                 }
             }
 
@@ -79,11 +81,7 @@ class ArticleListPresenterSpec: QuickSpec {
 
             describe("another article available") {
                 beforeEach {
-                    interactor.invokedArticles?.completion([.spaceX])
-                }
-
-                it("presents the other article as well") {
-                    expect(view.viewModel?.articles.last?.name).to(equal(Article.spaceX.name))
+                    interactor.invokedArticles?.completion([.tesla])
                 }
 
                 it("shows two articles in total") {
@@ -102,4 +100,18 @@ class ArticleListPresenterSpec: QuickSpec {
             }
         }
     }
+}
+
+private extension Article {
+    static let tesla: Article = {
+        var article = Article()
+        var unit = ArticleUnit()
+        var price = ArticlePrice()
+
+        article.name = "Tesla Model X"
+        price.formatted = "€ 200.000"
+        unit.price = price
+        article.units = [unit]
+        return article
+    }()
 }

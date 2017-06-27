@@ -30,7 +30,10 @@ class ArticleListPresenter {
 
     private func appendToViewModel(articles: [Article]) {
         let articles = articles.map { article in
-            ArticleListItemViewModel(name: article.name, price: article.price)
+            return ArticleListItemViewModel(
+                name: article.name,
+                price: article.units?.first?.price?.formatted
+            )
         }
 
         if view?.viewModel == nil {
