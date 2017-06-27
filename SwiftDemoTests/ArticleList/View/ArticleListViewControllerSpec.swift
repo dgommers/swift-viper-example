@@ -91,7 +91,7 @@ class ArticleListViewControllerSpec: QuickSpec {
 }
 
 extension ArticleListItemViewModel {
-    static var mugshot = ArticleListItemViewModel(name: "Mugshot Maker PRO+", price: "€ 100")
-    static var selfie = ArticleListItemViewModel(name: "Selfie Stick", price: nil)
-    static var apple = ArticleListItemViewModel(name: "Apple iPhone", price: "€ 50.00")
+    static let mugshot = ArticleListItemViewModel(name: "Mugshot Maker PRO+", price: "€ 100", image: nil)
+    static let selfie = ArticleListItemViewModel(name: "Selfie Stick", price: nil, image: nil)
+    static let apple = ArticleListItemViewModel(name: "Apple iPhone", price: "€ 50.00", image: nil)
 }

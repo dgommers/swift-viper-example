@@ -44,6 +44,11 @@ class ArticleListPresenterSpec: QuickSpec {
                     let expected = Article.tesla.units?.first?.price?.formatted
                     expect(itemViewModel?.price).to(equal(expected))
                 }
+
+                it("takes the first small hd image url") {
+                    let expected = Article.tesla.media?.images?.first?.smallHdURL
+                    expect(itemViewModel?.image).to(equal(expected))
+                }
             }
 
             describe("view will appear") {
@@ -104,14 +109,22 @@ class ArticleListPresenterSpec: QuickSpec {
 
 private extension Article {
     static let tesla: Article = {
-        var article = Article()
-        var unit = ArticleUnit()
-        var price = ArticlePrice()
+        var image = ArticleImage()
+        image.smallHdURL = URL(string: "example")
 
-        article.name = "Tesla Model X"
+        var media = ArticleMedia()
+        media.images = [image]
+
+        var price = ArticlePrice()
         price.formatted = "€ 200.000"
+
+        var unit = ArticleUnit()
         unit.price = price
+
+        var article = Article()
+        article.name = "Tesla Model X"
         article.units = [unit]
+        article.media = media
         return article
     }()
 }

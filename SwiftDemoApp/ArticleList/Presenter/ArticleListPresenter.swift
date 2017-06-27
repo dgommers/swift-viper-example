@@ -32,7 +32,8 @@ class ArticleListPresenter {
         let articles = articles.map { article in
             return ArticleListItemViewModel(
                 name: article.name,
-                price: article.units?.first?.price?.formatted
+                price: article.units?.first?.price?.formatted,
+                image: article.media?.images?.first?.smallHdURL
             )
         }
 
