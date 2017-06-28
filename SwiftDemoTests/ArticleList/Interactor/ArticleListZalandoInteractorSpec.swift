@@ -61,7 +61,8 @@ class ArticleListZalandoInteractorSpec: QuickSpec {
                 }
 
                 it("limts the number of fields") {
-                    expect(session.invokedRequest?.url.query).to(contain("fields=name,units.price.formatted"))
+                    let fields = "name,units.price.formatted,media.images.smallHdUrl"
+                    expect(session.invokedRequest?.url.query).to(contain("fields=\(fields)"))
                 }
 
                 it("requires the correct page") {
