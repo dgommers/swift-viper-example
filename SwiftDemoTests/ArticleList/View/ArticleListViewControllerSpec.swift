@@ -3,6 +3,7 @@
 import KIF
 import Quick
 import Nimble
+import SDWebImage
 
 @testable import SwiftDemoApp
 
@@ -62,6 +63,9 @@ class ArticleListViewControllerSpec: QuickSpec {
                         expect(item?.nameLabel?.text).to(equal(ArticleListItemViewModel.mugshot.name))
                     }
 
+                    it("loads the image") {
+                        expect(item?.itemImageView?.sd_imageURL()).to(equal(ArticleListItemViewModel.mugshot.image))
+                    }
                     it("shows the price") {
                         expect(item?.priceLabel?.text).to(equal(ArticleListItemViewModel.mugshot.price))
                     }
@@ -97,7 +101,11 @@ class ArticleListViewControllerSpec: QuickSpec {
 }
 
 extension ArticleListItemViewModel {
-    static let mugshot = ArticleListItemViewModel(name: "Mugshot Maker PRO+", price: "€ 100", image: nil)
+    static let mugshot = ArticleListItemViewModel(
+        name: "Mugshot Maker PRO+",
+        price: "€ 100",
+        image: URL(string: "https://mugshot.com/image.png")
+    )
     static let selfie = ArticleListItemViewModel(name: "Selfie Stick", price: nil, image: nil)
     static let apple = ArticleListItemViewModel(name: "Apple iPhone", price: "€ 50.00", image: nil)
 }
