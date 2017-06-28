@@ -18,8 +18,14 @@ class ArticleListItemView: UITableViewCell {
             nameLabel?.text = viewModel?.name
             priceLabel?.text = viewModel?.price
             stockLabel?.text = nil
-            itemImageView?.sd_setImage(with: viewModel?.image)
+            setImage(url: viewModel?.image)
         }
+    }
+
+    func setImage(url: URL?) {
+        itemImageView?.sd_setShowActivityIndicatorView(true)
+        itemImageView?.sd_setIndicatorStyle(.gray)
+        itemImageView?.sd_setImage(with: url)
     }
 
     override func awakeFromNib() {
