@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36C922F8760297A78BC50E9F /* Pods_SwiftDemoApp_SwiftDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1956A946830F60F01BEBD2DA /* Pods_SwiftDemoApp_SwiftDemoTests.framework */; };
 		6935E89081F2185D3C2FB0B1 /* Pods_SwiftDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EE7BBDD03037DD028294E9 /* Pods_SwiftDemoTests.framework */; };
 		A0863958FDF1D4C649AE86F8 /* Pods_SwiftDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E0CD0D263C4EBF3AC26C126 /* Pods_SwiftDemoApp.framework */; };
 		B35CB0B91EFFF9BC00988E74 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35CB0B81EFFF9BC00988E74 /* URLSession.swift */; };
@@ -47,7 +48,10 @@
 /* Begin PBXFileReference section */
 		0686E2540DE3019D296065A6 /* Pods-SwiftDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemoTests/Pods-SwiftDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0E0CD0D263C4EBF3AC26C126 /* Pods_SwiftDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18C3F1F7B02E7A97478530E2 /* Pods-SwiftDemoApp-SwiftDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemoApp-SwiftDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemoApp-SwiftDemoTests/Pods-SwiftDemoApp-SwiftDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1956A946830F60F01BEBD2DA /* Pods_SwiftDemoApp_SwiftDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDemoApp_SwiftDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4147F128E7A8FF8C493E0F0D /* Pods-SwiftDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemoTests/Pods-SwiftDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		8BDD171E35FBD2262B9D03AB /* Pods-SwiftDemoApp-SwiftDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemoApp-SwiftDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemoApp-SwiftDemoTests/Pods-SwiftDemoApp-SwiftDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		903CD887AA47853168E82B1F /* Pods-SwiftDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemoApp/Pods-SwiftDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		905B578B99B39E4A4DA688FA /* Pods-SwiftDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemoApp/Pods-SwiftDemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		B35CB0B81EFFF9BC00988E74 /* URLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6935E89081F2185D3C2FB0B1 /* Pods_SwiftDemoTests.framework in Frameworks */,
+				36C922F8760297A78BC50E9F /* Pods_SwiftDemoApp_SwiftDemoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +110,7 @@
 			children = (
 				0E0CD0D263C4EBF3AC26C126 /* Pods_SwiftDemoApp.framework */,
 				C2EE7BBDD03037DD028294E9 /* Pods_SwiftDemoTests.framework */,
+				1956A946830F60F01BEBD2DA /* Pods_SwiftDemoApp_SwiftDemoTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -263,6 +269,8 @@
 				905B578B99B39E4A4DA688FA /* Pods-SwiftDemoApp.release.xcconfig */,
 				0686E2540DE3019D296065A6 /* Pods-SwiftDemoTests.debug.xcconfig */,
 				4147F128E7A8FF8C493E0F0D /* Pods-SwiftDemoTests.release.xcconfig */,
+				18C3F1F7B02E7A97478530E2 /* Pods-SwiftDemoApp-SwiftDemoTests.debug.xcconfig */,
+				8BDD171E35FBD2262B9D03AB /* Pods-SwiftDemoApp-SwiftDemoTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -417,7 +425,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftDemoTests/Pods-SwiftDemoTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftDemoApp-SwiftDemoTests/Pods-SwiftDemoApp-SwiftDemoTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A798FD1A7A2BABCBACACB5ED /* [CP] Check Pods Manifest.lock */ = {
@@ -461,7 +469,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftDemoTests/Pods-SwiftDemoTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftDemoApp-SwiftDemoTests/Pods-SwiftDemoApp-SwiftDemoTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FE6CF8EFA30DC25423034B32 /* [CP] Check Pods Manifest.lock */ = {
@@ -668,7 +676,7 @@
 		};
 		B3FCCFC51EFC3E85004C46A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0686E2540DE3019D296065A6 /* Pods-SwiftDemoTests.debug.xcconfig */;
+			baseConfigurationReference = 18C3F1F7B02E7A97478530E2 /* Pods-SwiftDemoApp-SwiftDemoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -684,7 +692,7 @@
 		};
 		B3FCCFC61EFC3E85004C46A2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4147F128E7A8FF8C493E0F0D /* Pods-SwiftDemoTests.release.xcconfig */;
+			baseConfigurationReference = 8BDD171E35FBD2262B9D03AB /* Pods-SwiftDemoApp-SwiftDemoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;

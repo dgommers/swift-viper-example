@@ -4,17 +4,22 @@ PODS:
   - KIF/Core (3.5.2)
   - Nimble (7.0.1)
   - Quick (1.1.0)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
 
 DEPENDENCIES:
   - KIF (~> 3.5)
   - Nimble (~> 7.0)
   - Quick (~> 1.0)
+  - SDWebImage
 
 SPEC CHECKSUMS:
   KIF: f2a6025bb3f11692df675054a134d43a9ec2d7db
   Nimble: 657d000e11df8aebe27cdaf9d244de7f30ed87f7
   Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
-PODFILE CHECKSUM: ae904d58dd4b723f1a6500d8ec44e0039cab79cf
+PODFILE CHECKSUM: 7409890a126c2bd092f7dbcf63de32d521c90b4b
 
 COCOAPODS: 1.2.1
