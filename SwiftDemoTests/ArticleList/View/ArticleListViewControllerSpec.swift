@@ -75,6 +75,20 @@ class ArticleListViewControllerSpec: QuickSpec {
                         let expectedWithSpacing = "M  S  "
                         expect(item?.sizesLabel?.attributedText?.string).to(equal(expectedWithSpacing))
                     }
+
+                    it("shows the stock message") {
+                        expect(item?.stockLabel?.text).to(equal(ArticleListItemViewModel.mugshot.stock))
+                    }
+
+                    it("shows the stock message in the right color") {
+                        let stockColor = ArticleListItemViewModel.mugshot.stockColor
+                        expect(item?.stockLabel?.textColor).to(equal(stockColor))
+                    }
+
+                    it("shows the stock indicator in the right color") {
+                        let stockColor = ArticleListItemViewModel.mugshot.stockColor
+                        expect(item?.stockIndicatorView?.backgroundColor).to(equal(stockColor))
+                    }
                 }
 
                 it("shows the last title") {
@@ -112,8 +126,8 @@ extension ArticleListItemViewModel {
         price: "€ 100",
         image: URL(string: "https://mugshot.com/image.png"),
         units: [NSAttributedString(string: "M"), NSAttributedString(string: "S")],
-        stock: nil,
-        stockColor: nil
+        stock: "Out of stock",
+        stockColor: .darkOrange
     )
 
     static let selfie = ArticleListItemViewModel(

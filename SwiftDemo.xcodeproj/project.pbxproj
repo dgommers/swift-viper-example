@@ -21,6 +21,7 @@
 		B3BBAFCF1F02FB7700A59006 /* ArticleExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BBAFCE1F02FB7700A59006 /* ArticleExample.swift */; };
 		B3BBAFD31F04C8D500A59006 /* ArticleListItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BBAFD21F04C8D500A59006 /* ArticleListItemPresenter.swift */; };
 		B3BBAFD51F04C92800A59006 /* ArticleListItemPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BBAFD41F04C92800A59006 /* ArticleListItemPresenterSpec.swift */; };
+		B3BBAFD71F04F41200A59006 /* UIColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BBAFD61F04F41200A59006 /* UIColorScheme.swift */; };
 		B3BEB0971EFD9137004F07AD /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEB0961EFD9137004F07AD /* ArticleListViewController.swift */; };
 		B3BEB09B1EFD93C6004F07AD /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEB09A1EFD93C6004F07AD /* ArticleListViewModel.swift */; };
 		B3BEB09E1EFD948C004F07AD /* ArticleListViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEB09D1EFD948C004F07AD /* ArticleListViewControllerSpec.swift */; };
@@ -67,6 +68,7 @@
 		B3BBAFCE1F02FB7700A59006 /* ArticleExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleExample.swift; sourceTree = "<group>"; };
 		B3BBAFD21F04C8D500A59006 /* ArticleListItemPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListItemPresenter.swift; sourceTree = "<group>"; };
 		B3BBAFD41F04C92800A59006 /* ArticleListItemPresenterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListItemPresenterSpec.swift; sourceTree = "<group>"; };
+		B3BBAFD61F04F41200A59006 /* UIColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorScheme.swift; sourceTree = "<group>"; };
 		B3BEB0961EFD9137004F07AD /* ArticleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
 		B3BEB09A1EFD93C6004F07AD /* ArticleListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewModel.swift; sourceTree = "<group>"; };
 		B3BEB09D1EFD948C004F07AD /* ArticleListViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewControllerSpec.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				B3FCCFB31EFC3E54004C46A2 /* Info.plist */,
 				B3FCCFB01EFC3E54004C46A2 /* LaunchScreen.storyboard */,
 				B3FCCFAB1EFC3E54004C46A2 /* Main.storyboard */,
+				B3BBAFD61F04F41200A59006 /* UIColorScheme.swift */,
 			);
 			path = SwiftDemoApp;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				B3BEB0A21EFD9BC5004F07AD /* CollectionSafety.swift in Sources */,
 				B35CB0B91EFFF9BC00988E74 /* URLSession.swift in Sources */,
 				B3BEB09B1EFD93C6004F07AD /* ArticleListViewModel.swift in Sources */,
+				B3BBAFD71F04F41200A59006 /* UIColorScheme.swift in Sources */,
 				B3BBAFD31F04C8D500A59006 /* ArticleListItemPresenter.swift in Sources */,
 				B35CB0C21F0030BB00988E74 /* Article.swift in Sources */,
 				B3BEB0A61EFDA9AA004F07AD /* ArticleListRouter.swift in Sources */,
