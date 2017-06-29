@@ -10,14 +10,13 @@ class ArticleListItemPresenterSpec: QuickSpec {
     override func spec() {
 
         var subject: ArticleListItemPresenter!
+        var viewModel: ArticleListItemViewModel!
 
         beforeEach {
             subject = ArticleListItemPresenter()
         }
 
-        describe("view model") {
-            var viewModel: ArticleListItemViewModel!
-
+        describe("available article") {
             beforeEach {
                 viewModel = subject.viewModel(article: .tesla)
             }
@@ -36,9 +35,19 @@ class ArticleListItemPresenterSpec: QuickSpec {
                 expect(viewModel?.image).to(equal(expected))
             }
 
+            it("combines all unit stock levels") {
+                let combinedStockLevel = 10 + 1 + 0
+                let expectedText = "\(combinedStockLevel) in stock"
+                expect(viewModel?.stock).to(equal(expectedText))
+            }
+
+            it("shows green stock text") {
+                expect(viewModel?.stockColor).to(equal(UIColor.green))
+            }
+
             describe("units") {
                 it("shows all units") {
-                    expect(viewModel?.units?.count).to(equal(2))
+                    expect(viewModel?.units?.count).to(equal(3))
                 }
 
                 describe("available unit") {
@@ -76,6 +85,23 @@ class ArticleListItemPresenterSpec: QuickSpec {
                 }
             }
         }
+
+        describe("unavailable article") {
+            beforeEach {
+                var article = Article.tesla
+                article.units = [.unavailable]
+                viewModel = subject.viewModel(article: article)
+            }
+
+            it("shows out of stock") {
+                let expectedText = "Out of stock"
+                expect(viewModel?.stock).to(equal(expectedText))
+            }
+
+            it("shown stock text is red") {
+                expect(viewModel?.stockColor).to(equal(UIColor.red))
+            }
+        }
     }
 }
 
@@ -96,6 +122,10 @@ extension Article {
         mUnit.available = true
         mUnit.price = price
 
+        var lUnit = ArticleUnit()
+        lUnit.size = "L"
+        lUnit.stock = 1
+
         var sUnit = ArticleUnit()
         sUnit.size = "S"
         sUnit.stock = 0
@@ -103,8 +133,17 @@ extension Article {
 
         var article = Article()
         article.name = "Tesla Model X"
-        article.units = [mUnit, sUnit]
+        article.units = [mUnit, lUnit, sUnit]
         article.media = media
         return article
+    }()
+}
+
+extension ArticleUnit {
+    static let unavailable: ArticleUnit = {
+        var unit = ArticleUnit()
+        unit.stock = 0
+        unit.available = false
+        return unit
     }()
 }
