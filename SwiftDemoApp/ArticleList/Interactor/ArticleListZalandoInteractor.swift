@@ -11,7 +11,7 @@ struct ArticleListZalandoInteractor: ArticleListInteractor {
     var session: URLSessionType = URLSession(configuration: .default, delegate: nil, delegateQueue: .main)
 
     private let host = "api.zalando.com"
-    private let fields = ["name", "media.images.smallHdUrl",
+    private let fields = ["name", "color", "media.images.smallHdUrl",
                           "units.price.formatted", "units.stock",
                           "units.available", "units.size"]
 
