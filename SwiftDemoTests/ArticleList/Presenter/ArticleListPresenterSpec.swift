@@ -10,12 +10,14 @@ class ArticleListPresenterSpec: QuickSpec {
 
         var view: ArticleListViewStub!
         var interactor: ArticleListInteractorStub!
+        var itemPresenter: ArticleListItemPresenterStub!
         var subject: ArticleListPresenter!
 
         beforeEach {
             view = ArticleListViewStub()
             interactor = ArticleListInteractorStub()
-            subject = ArticleListPresenter(view: view, interactor: interactor)
+            itemPresenter = ArticleListItemPresenterStub()
+            subject = ArticleListPresenter(view: view, interactor: interactor, itemPresenter: itemPresenter)
         }
 
         describe("view will appear") {
@@ -27,44 +29,22 @@ class ArticleListPresenterSpec: QuickSpec {
                 expect(interactor.invokedArticles?.page).to(equal(1))
             }
 
-            describe("one article available") {
-                var itemViewModel: ArticleListItemViewModel?
+            describe("few article available") {
+                let articles: [Article] = [.tesla, .tesla]
 
                 beforeEach {
-                    interactor.invokedArticles?.completion([.tesla])
-                    itemViewModel = view.viewModel?.articles.first
+                    itemPresenter.returnViewModel.name = "Item"
+                    interactor.invokedArticles?.completion(articles)
                 }
 
-                it("takes the article name") {
-                    expect(itemViewModel?.name).to(equal(Article.tesla.name))
+                it("creates a view model for all articles") {
+                    expect(itemPresenter.invokedViewModel.count).to(equal(2))
                 }
 
-                it("takes the first formatted unit price") {
-                    let expected = Article.tesla.units?.first?.price?.formatted
-                    expect(itemViewModel?.price).to(equal(expected))
-                }
-
-                it("takes the first small hd image url") {
-                    let expected = Article.tesla.media?.images?.first?.smallHdURL
-                    expect(itemViewModel?.image).to(equal(expected))
-                }
-
-                describe("units") {
-                    it("shows all units") {
-                        expect(itemViewModel?.units?.count).to(equal(2))
-                    }
-
-                    describe("first") {
-                        var unit: NSAttributedString?
-
-                        beforeEach {
-                            unit = itemViewModel?.units?.first
-                        }
-
-                        it("shows the size") {
-                            expect(unit?.string).to(equal("M"))
-                        }
-                    }
+                it("presents the created view model") {
+                    let firstViewModel = view.viewModel?.articles.first
+                    let expectedName = itemPresenter.returnViewModel.name
+                    expect(firstViewModel?.name).to(equal(expectedName))
                 }
             }
 
@@ -122,30 +102,4 @@ class ArticleListPresenterSpec: QuickSpec {
             }
         }
     }
-}
-
-private extension Article {
-    static let tesla: Article = {
-        var image = ArticleImage()
-        image.smallHdURL = URL(string: "example")
-
-        var media = ArticleMedia()
-        media.images = [image]
-
-        var price = ArticlePrice()
-        price.formatted = "€ 200.000"
-
-        var mUnit = ArticleUnit()
-        mUnit.size = "M"
-        mUnit.price = price
-
-        var sUnit = ArticleUnit()
-        sUnit.size = "S"
-
-        var article = Article()
-        article.name = "Tesla Model X"
-        article.units = [mUnit, sUnit]
-        article.media = media
-        return article
-    }()
 }

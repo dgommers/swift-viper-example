@@ -19,6 +19,8 @@
 		B393DE1F1EFC703C000FDC53 /* ArticleListPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B393DE1E1EFC703C000FDC53 /* ArticleListPresenterSpec.swift */; };
 		B3BBAFCD1F02EE7300A59006 /* ArticleExample.json in Resources */ = {isa = PBXBuildFile; fileRef = B3BBAFCC1F02EE7300A59006 /* ArticleExample.json */; };
 		B3BBAFCF1F02FB7700A59006 /* ArticleExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BBAFCE1F02FB7700A59006 /* ArticleExample.swift */; };
+		B3BBAFD31F04C8D500A59006 /* ArticleListItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BBAFD21F04C8D500A59006 /* ArticleListItemPresenter.swift */; };
+		B3BBAFD51F04C92800A59006 /* ArticleListItemPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BBAFD41F04C92800A59006 /* ArticleListItemPresenterSpec.swift */; };
 		B3BEB0971EFD9137004F07AD /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEB0961EFD9137004F07AD /* ArticleListViewController.swift */; };
 		B3BEB09B1EFD93C6004F07AD /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEB09A1EFD93C6004F07AD /* ArticleListViewModel.swift */; };
 		B3BEB09E1EFD948C004F07AD /* ArticleListViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEB09D1EFD948C004F07AD /* ArticleListViewControllerSpec.swift */; };
@@ -63,6 +65,8 @@
 		B393DE1E1EFC703C000FDC53 /* ArticleListPresenterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListPresenterSpec.swift; sourceTree = "<group>"; };
 		B3BBAFCC1F02EE7300A59006 /* ArticleExample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ArticleExample.json; sourceTree = "<group>"; };
 		B3BBAFCE1F02FB7700A59006 /* ArticleExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleExample.swift; sourceTree = "<group>"; };
+		B3BBAFD21F04C8D500A59006 /* ArticleListItemPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListItemPresenter.swift; sourceTree = "<group>"; };
+		B3BBAFD41F04C92800A59006 /* ArticleListItemPresenterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListItemPresenterSpec.swift; sourceTree = "<group>"; };
 		B3BEB0961EFD9137004F07AD /* ArticleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
 		B3BEB09A1EFD93C6004F07AD /* ArticleListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewModel.swift; sourceTree = "<group>"; };
 		B3BEB09D1EFD948C004F07AD /* ArticleListViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewControllerSpec.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				B3BEB0A31EFDA014004F07AD /* ArticleListPresenter.swift */,
+				B3BBAFD21F04C8D500A59006 /* ArticleListItemPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				B393DE1E1EFC703C000FDC53 /* ArticleListPresenterSpec.swift */,
+				B3BBAFD41F04C92800A59006 /* ArticleListItemPresenterSpec.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -498,6 +504,7 @@
 				B3BEB0A21EFD9BC5004F07AD /* CollectionSafety.swift in Sources */,
 				B35CB0B91EFFF9BC00988E74 /* URLSession.swift in Sources */,
 				B3BEB09B1EFD93C6004F07AD /* ArticleListViewModel.swift in Sources */,
+				B3BBAFD31F04C8D500A59006 /* ArticleListItemPresenter.swift in Sources */,
 				B35CB0C21F0030BB00988E74 /* Article.swift in Sources */,
 				B3BEB0A61EFDA9AA004F07AD /* ArticleListRouter.swift in Sources */,
 				B35CB0C01F00248800988E74 /* ArticleListItemView.swift in Sources */,
@@ -514,6 +521,7 @@
 				B3BEB0AC1EFDAFB8004F07AD /* ArticleListZalandoInteractorSpec.swift in Sources */,
 				B3BBAFCF1F02FB7700A59006 /* ArticleExample.swift in Sources */,
 				B3BEB09E1EFD948C004F07AD /* ArticleListViewControllerSpec.swift in Sources */,
+				B3BBAFD51F04C92800A59006 /* ArticleListItemPresenterSpec.swift in Sources */,
 				B393DE1F1EFC703C000FDC53 /* ArticleListPresenterSpec.swift in Sources */,
 				B35CB0C41F0033F200988E74 /* ArticleSpec.swift in Sources */,
 				B3BEB0A01EFD95AF004F07AD /* XCTestCaseKIF.swift in Sources */,
