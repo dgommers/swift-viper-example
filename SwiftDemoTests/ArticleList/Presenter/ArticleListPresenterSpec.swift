@@ -31,7 +31,6 @@ class ArticleListPresenterSpec: QuickSpec {
                 var itemViewModel: ArticleListItemViewModel?
 
                 beforeEach {
-
                     interactor.invokedArticles?.completion([.tesla])
                     itemViewModel = view.viewModel?.articles.first
                 }
@@ -48,6 +47,24 @@ class ArticleListPresenterSpec: QuickSpec {
                 it("takes the first small hd image url") {
                     let expected = Article.tesla.media?.images?.first?.smallHdURL
                     expect(itemViewModel?.image).to(equal(expected))
+                }
+
+                describe("units") {
+                    it("shows all units") {
+                        expect(itemViewModel?.units?.count).to(equal(2))
+                    }
+
+                    describe("first") {
+                        var unit: NSAttributedString?
+
+                        beforeEach {
+                            unit = itemViewModel?.units?.first
+                        }
+
+                        it("shows the size") {
+                            expect(unit?.string).to(equal("M"))
+                        }
+                    }
                 }
             }
 
@@ -118,12 +135,16 @@ private extension Article {
         var price = ArticlePrice()
         price.formatted = "€ 200.000"
 
-        var unit = ArticleUnit()
-        unit.price = price
+        var mUnit = ArticleUnit()
+        mUnit.size = "M"
+        mUnit.price = price
+
+        var sUnit = ArticleUnit()
+        sUnit.size = "S"
 
         var article = Article()
         article.name = "Tesla Model X"
-        article.units = [unit]
+        article.units = [mUnit, sUnit]
         article.media = media
         return article
     }()

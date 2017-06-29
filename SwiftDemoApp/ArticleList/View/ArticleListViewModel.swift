@@ -10,4 +10,5 @@ struct ArticleListItemViewModel {
     var name: String?
     var price: String?
     var image: URL?
+    var units: [NSAttributedString]?
 }
