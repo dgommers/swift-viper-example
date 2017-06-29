@@ -36,6 +36,8 @@ class ArticleListViewControllerSpec: QuickSpec {
             expect(subject.navigationItem.title).to(equal("Articles"))
         }
 
+        self.capture(name: "no articles")
+
         describe("view will appear") {
             beforeEach {
                 subject.viewWillAppear(false)
@@ -51,6 +53,8 @@ class ArticleListViewControllerSpec: QuickSpec {
                 beforeEach {
                     subject.viewModel = ArticleListViewModel(articles: [.mugshot, .selfie, .apple])
                 }
+
+                self.capture(name: "three articles")
 
                 describe("first article") {
                     var item: ArticleListItemView?
@@ -105,6 +109,8 @@ class ArticleListViewControllerSpec: QuickSpec {
                         Array(repeating: .mugshot, count: numberOfArticles)
                     )
                 }
+
+                self.capture(name: "many articles")
 
                 describe("scroll to last row") {
                     beforeEach {
