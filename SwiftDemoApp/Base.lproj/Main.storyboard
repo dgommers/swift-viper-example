@@ -38,14 +38,20 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€ 00,00" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGr-Gj-SD8">
+                                            <rect key="frame" x="299" y="95.5" width="60" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o0e-F8-Wjd">
-                                            <rect key="frame" x="131" y="99.5" width="11.5" height="12"/>
+                                            <rect key="frame" x="131" y="100" width="11.5" height="12"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3T6-JV-meS">
-                                            <rect key="frame" x="107" y="97.5" width="16" height="16"/>
+                                            <rect key="frame" x="107" y="98" width="16" height="16"/>
                                             <color key="backgroundColor" white="0.91959635419999997" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="16" id="23l-b8-nlp"/>
@@ -57,25 +63,28 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€ 00,00" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGr-Gj-SD8">
-                                            <rect key="frame" x="299" y="95" width="60" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1W-j0-WFo">
+                                            <rect key="frame" x="107" y="50" width="252" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="dGr-Gj-SD8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="C1W-j0-WFo" secondAttribute="bottom" constant="16" id="5X7-87-rtc"/>
                                         <constraint firstItem="2ra-2x-FDQ" firstAttribute="leading" secondItem="JRe-F8-gfS" secondAttribute="trailing" constant="16" id="7cJ-1S-a11"/>
                                         <constraint firstItem="3T6-JV-meS" firstAttribute="centerY" secondItem="dGr-Gj-SD8" secondAttribute="centerY" id="8Qj-Ux-WAj"/>
                                         <constraint firstItem="o0e-F8-Wjd" firstAttribute="centerY" secondItem="3T6-JV-meS" secondAttribute="centerY" id="BVD-ZJ-vbo"/>
                                         <constraint firstAttribute="bottom" secondItem="dGr-Gj-SD8" secondAttribute="bottom" constant="16" id="Di9-sg-6VY"/>
                                         <constraint firstItem="dGr-Gj-SD8" firstAttribute="trailing" secondItem="2ra-2x-FDQ" secondAttribute="trailing" id="E0L-e4-fAL"/>
-                                        <constraint firstItem="dGr-Gj-SD8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2ra-2x-FDQ" secondAttribute="bottom" constant="16" id="G6n-bn-9pu"/>
                                         <constraint firstItem="JRe-F8-gfS" firstAttribute="leading" secondItem="F4L-nk-nkK" secondAttribute="leading" constant="16" id="INx-ot-Qsk"/>
+                                        <constraint firstItem="C1W-j0-WFo" firstAttribute="leading" secondItem="2ra-2x-FDQ" secondAttribute="leading" id="KRO-mg-zIf"/>
                                         <constraint firstItem="2ra-2x-FDQ" firstAttribute="top" secondItem="JRe-F8-gfS" secondAttribute="top" id="KmG-7m-Y47"/>
                                         <constraint firstItem="o0e-F8-Wjd" firstAttribute="leading" secondItem="3T6-JV-meS" secondAttribute="trailing" constant="8" id="Mpb-uK-e8x"/>
                                         <constraint firstItem="3T6-JV-meS" firstAttribute="leading" secondItem="2ra-2x-FDQ" secondAttribute="leading" id="Zdu-1p-aHh"/>
+                                        <constraint firstItem="C1W-j0-WFo" firstAttribute="top" secondItem="2ra-2x-FDQ" secondAttribute="bottom" constant="16" id="aQx-CG-fLB"/>
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="JRe-F8-gfS" secondAttribute="bottom" constant="16" id="aun-7R-DDP"/>
+                                        <constraint firstItem="C1W-j0-WFo" firstAttribute="trailing" secondItem="2ra-2x-FDQ" secondAttribute="trailing" id="ihU-uA-4R4"/>
                                         <constraint firstAttribute="trailing" secondItem="2ra-2x-FDQ" secondAttribute="trailing" constant="16" id="p7Q-lY-oVs"/>
                                         <constraint firstItem="JRe-F8-gfS" firstAttribute="top" secondItem="F4L-nk-nkK" secondAttribute="top" constant="16" id="zFK-OL-0ZF"/>
                                     </constraints>
@@ -84,6 +93,7 @@
                                     <outlet property="itemImageView" destination="JRe-F8-gfS" id="VrG-Lm-poX"/>
                                     <outlet property="nameLabel" destination="2ra-2x-FDQ" id="41U-lP-gtK"/>
                                     <outlet property="priceLabel" destination="dGr-Gj-SD8" id="LGZ-RE-yQh"/>
+                                    <outlet property="sizesLabel" destination="C1W-j0-WFo" id="iMP-SJ-JUx"/>
                                     <outlet property="stockIndicatorView" destination="3T6-JV-meS" id="ht9-Fy-q6Y"/>
                                     <outlet property="stockLabel" destination="o0e-F8-Wjd" id="CDu-Vr-1hh"/>
                                 </connections>

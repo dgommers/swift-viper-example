@@ -12,17 +12,20 @@ class ArticleListItemView: UITableViewCell {
     @IBOutlet weak var stockLabel: UILabel?
     @IBOutlet weak var stockIndicatorView: UIView?
     @IBOutlet weak var itemImageView: UIImageView?
+    @IBOutlet weak var sizesLabel: UILabel?
 
     var viewModel: ArticleListItemViewModel? {
         didSet {
             nameLabel?.text = viewModel?.name
             priceLabel?.text = viewModel?.price
             stockLabel?.text = nil
+            sizesLabel?.attributedText = viewModel?.mergedUnits
+
             setImage(url: viewModel?.image)
         }
     }
 
-    func setImage(url: URL?) {
+    private func setImage(url: URL?) {
         itemImageView?.sd_setShowActivityIndicatorView(true)
         itemImageView?.sd_setIndicatorStyle(.gray)
         itemImageView?.sd_setImage(with: url)
@@ -30,5 +33,18 @@ class ArticleListItemView: UITableViewCell {
 
     override func awakeFromNib() {
         separatorInset = .zero
+    }
+}
+
+private extension ArticleListItemViewModel {
+    var mergedUnits: NSAttributedString? {
+        guard let units = units else { return nil }
+        let spacing = NSAttributedString(string: "  ")
+        let attributedText = NSMutableAttributedString()
+        for unit in units {
+            attributedText.append(unit)
+            attributedText.append(spacing)
+        }
+        return attributedText
     }
 }

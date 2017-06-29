@@ -66,8 +66,14 @@ class ArticleListViewControllerSpec: QuickSpec {
                     it("loads the image") {
                         expect(item?.itemImageView?.sd_imageURL()).to(equal(ArticleListItemViewModel.mugshot.image))
                     }
+
                     it("shows the price") {
                         expect(item?.priceLabel?.text).to(equal(ArticleListItemViewModel.mugshot.price))
+                    }
+
+                    it("shows the sizes with spacing") {
+                        let expectedWithSpacing = "M  S  "
+                        expect(item?.sizesLabel?.attributedText?.string).to(equal(expectedWithSpacing))
                     }
                 }
 
@@ -104,8 +110,9 @@ extension ArticleListItemViewModel {
     static let mugshot = ArticleListItemViewModel(
         name: "Mugshot Maker PRO+",
         price: "€ 100",
-        image: URL(string: "https://mugshot.com/image.png")
+        image: URL(string: "https://mugshot.com/image.png"),
+        units: [NSAttributedString(string: "M"), NSAttributedString(string: "S")]
     )
-    static let selfie = ArticleListItemViewModel(name: "Selfie Stick", price: nil, image: nil)
-    static let apple = ArticleListItemViewModel(name: "Apple iPhone", price: "€ 50.00", image: nil)
+    static let selfie = ArticleListItemViewModel(name: "Selfie Stick", price: nil, image: nil, units: nil)
+    static let apple = ArticleListItemViewModel(name: "Apple iPhone", price: "€ 50.00", image: nil, units: nil)
 }
