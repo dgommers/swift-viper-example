@@ -111,8 +111,17 @@ extension ArticleListItemViewModel {
         name: "Mugshot Maker PRO+",
         price: "€ 100",
         image: URL(string: "https://mugshot.com/image.png"),
-        units: [NSAttributedString(string: "M"), NSAttributedString(string: "S")]
+        units: [NSAttributedString(string: "M"), NSAttributedString(string: "S")],
+        stock: nil,
+        stockColor: nil
     )
-    static let selfie = ArticleListItemViewModel(name: "Selfie Stick", price: nil, image: nil, units: nil)
-    static let apple = ArticleListItemViewModel(name: "Apple iPhone", price: "€ 50.00", image: nil, units: nil)
+
+    static let selfie = ArticleListItemViewModel(
+        name: "Selfie Stick",
+        price: nil, image: nil, units: nil, stock: nil, stockColor: nil
+    )
+    static let apple = ArticleListItemViewModel(
+        name: "Apple iPhone",
+        price: "€ 50.00", image: nil, units: nil, stock: nil, stockColor: nil
+    )
 }
