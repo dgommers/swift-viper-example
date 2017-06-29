@@ -11,10 +11,13 @@ struct ArticleListZalandoInteractor: ArticleListInteractor {
     var session: URLSessionType = URLSession(configuration: .default, delegate: nil, delegateQueue: .main)
 
     private let host = "api.zalando.com"
-    private let fields = "name,units.price.formatted,media.images.smallHdUrl"
+    private let fields = ["name", "media.images.smallHdUrl",
+                          "units.price.formatted", "units.stock",
+                          "units.available", "units.size"]
 
     func articles(page: UInt, completion: @escaping ([Article]) -> Void) {
-        let url = URL(string: "https://\(host)/articles?fields=\(fields)&page=\(page)")!
+        let query = "fields=\(fields.joined(separator: ","))&page=\(page)"
+        let url = URL(string: "https://\(host)/articles?\(query)")!
         session.request(with: url) { data, _, _ in
             let root = data?.json as? [String: Any]
             let content = root?["content"] as? [Any]
