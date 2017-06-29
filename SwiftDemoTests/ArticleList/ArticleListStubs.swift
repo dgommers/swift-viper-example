@@ -28,3 +28,14 @@ class ArticleListEventHandlerStub: ArticleListEventHandler {
         invokedDidReachBottom = true
     }
 }
+
+class ArticleListItemPresenterStub: ArticleListItemPresenterType {
+
+    var invokedViewModel = [Article]()
+    var returnViewModel = ArticleListItemViewModel()
+
+    func viewModel(article: Article) -> ArticleListItemViewModel {
+        invokedViewModel.append(article)
+        return returnViewModel
+    }
+}

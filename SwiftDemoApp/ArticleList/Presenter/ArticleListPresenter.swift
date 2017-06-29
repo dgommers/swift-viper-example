@@ -6,13 +6,16 @@ class ArticleListPresenter {
 
     weak var view: ArticleListView?
     let interactor: ArticleListInteractor
+    let itemPresenter: ArticleListItemPresenterType
 
     fileprivate var requestedPage = UInt(0)
     fileprivate var currentPage = UInt(0)
 
-    init(view: ArticleListView?, interactor: ArticleListInteractor) {
+    init(view: ArticleListView?, interactor: ArticleListInteractor,
+         itemPresenter: ArticleListItemPresenterType = ArticleListItemPresenter()) {
         self.view = view
         self.interactor = interactor
+        self.itemPresenter = itemPresenter
     }
 
     fileprivate func presentNextPage() {
@@ -31,14 +34,7 @@ class ArticleListPresenter {
     }
 
     private func appendToViewModel(articles: [Article]) {
-        let articles = articles.map { article in
-            return ArticleListItemViewModel(
-                name: article.name,
-                price: article.units?.first?.price?.formatted,
-                image: article.media?.images?.first?.smallHdURL,
-                units: article.units?.flatMap { NSAttributedString(string: $0.size ?? "") }
-            )
-        }
+        let articles = articles.map(itemPresenter.viewModel)
 
         if view?.viewModel == nil {
             view?.viewModel = ArticleListViewModel(articles: articles)
