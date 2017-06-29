@@ -21,12 +21,18 @@ struct Article {
 
 struct ArticleUnit {
     var price: ArticlePrice?
+    var size: String?
+    var stock: Int?
+    var available: Bool?
 
     init() { }
 
     init(json: Any?) {
         let jsonRoot = json as? [String: Any]
         price = ArticlePrice(json: jsonRoot?["price"])
+        size = jsonRoot?["size"] as? String
+        stock = jsonRoot?["stock"] as? Int
+        available = jsonRoot?["available"] as? Bool
     }
 }
 
