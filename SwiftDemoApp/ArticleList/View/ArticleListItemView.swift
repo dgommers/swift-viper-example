@@ -18,7 +18,9 @@ class ArticleListItemView: UITableViewCell {
         didSet {
             nameLabel?.text = viewModel?.name
             priceLabel?.text = viewModel?.price
-            stockLabel?.text = nil
+            stockLabel?.text = viewModel?.stock
+            stockIndicatorView?.backgroundColor = viewModel?.stockColor
+            stockLabel?.textColor = viewModel?.stockColor
             sizesLabel?.attributedText = viewModel?.mergedUnits
 
             setImage(url: viewModel?.image)

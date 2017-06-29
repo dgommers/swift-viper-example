@@ -42,7 +42,7 @@ class ArticleListItemPresenterSpec: QuickSpec {
             }
 
             it("shows green stock text") {
-                expect(viewModel?.stockColor).to(equal(UIColor.green))
+                expect(viewModel?.stockColor).to(equal(UIColor.darkGreen))
             }
 
             describe("units") {
@@ -98,8 +98,8 @@ class ArticleListItemPresenterSpec: QuickSpec {
                 expect(viewModel?.stock).to(equal(expectedText))
             }
 
-            it("shown stock text is red") {
-                expect(viewModel?.stockColor).to(equal(UIColor.red))
+            it("shown stock text is dark orange") {
+                expect(viewModel?.stockColor).to(equal(UIColor.darkOrange))
             }
         }
     }

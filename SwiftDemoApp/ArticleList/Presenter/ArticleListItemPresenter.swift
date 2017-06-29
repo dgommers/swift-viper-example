@@ -29,7 +29,7 @@ struct ArticleListItemPresenter: ArticleListItemPresenterType {
     }
 
     private func stockColor(level: Int) -> UIColor {
-        return level > 0 ? .green : .red
+        return level > 0 ? .darkGreen : .darkOrange
     }
 
     private func stockText(level: Int) -> String {
