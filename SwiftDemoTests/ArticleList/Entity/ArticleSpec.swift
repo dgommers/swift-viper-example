@@ -25,9 +25,30 @@ class ArticleSpec: QuickSpec {
                     expect(subject.units?.count).to(equal(5))
                 }
 
-                it("parses the first unit price") {
-                    let expected = "£11.00"
-                    expect(subject.units?.first?.price?.formatted).to(equal(expected))
+                describe("first") {
+                    var unit: ArticleUnit?
+
+                    beforeEach {
+                        unit = subject.units?.first
+                    }
+
+                    it("parses the price") {
+                        let expected = "£11.00"
+                        expect(unit?.price?.formatted).to(equal(expected))
+                    }
+
+                    it("parses the size") {
+                        let expected = "4-6m"
+                        expect(unit?.size).to(equal(expected))
+                    }
+
+                    it("parses the availability") {
+                        expect(unit?.available).to(beFalse())
+                    }
+
+                    it("parses the stock level") {
+                        expect(unit?.stock).to(equal(0))
+                    }
                 }
             }
 
