@@ -6,6 +6,7 @@ struct Article {
     var name: String?
     var units: [ArticleUnit]?
     var media: ArticleMedia?
+    var color: String?
 
     init() { }
 
@@ -16,6 +17,7 @@ struct Article {
         name = jsonRoot?["name"] as? String
         units = jsonUnits?.map { ArticleUnit(json: $0) }
         media = ArticleMedia(json: jsonRoot?["media"])
+        color = jsonRoot?["color"] as? String
     }
 }
 

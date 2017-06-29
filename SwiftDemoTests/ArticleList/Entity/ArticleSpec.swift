@@ -20,6 +20,11 @@ class ArticleSpec: QuickSpec {
                 expect(subject.name).to(equal(expected))
             }
 
+            it("parses the color") {
+                let expected = "Grey"
+                expect(subject.color).to(equal(expected))
+            }
+
             describe("units") {
                 it("parses each unit") {
                     expect(subject.units?.count).to(equal(5))

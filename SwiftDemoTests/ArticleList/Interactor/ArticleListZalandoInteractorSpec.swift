@@ -61,7 +61,7 @@ class ArticleListZalandoInteractorSpec: QuickSpec {
                 }
 
                 it("limts the number of fields") {
-                    let fields = ["name", "media.images.smallHdUrl",
+                    let fields = ["name", "color", "media.images.smallHdUrl",
                                   "units.price.formatted", "units.stock", "units.available", "units.size"]
                     let expected = fields.joined(separator: ",")
                     expect(session.invokedRequest?.url.query).to(contain(expected))
